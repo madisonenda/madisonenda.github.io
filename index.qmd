@@ -1,11 +1,24 @@
 ---
-title: "madisonenda.github.io"
+#title: "Madison Enda"
+image: Snorkel.JPG
+about: 
+  template: jolla
+  image-shape: round
+  image-width: 17em
+  links: 
+    -  text: LinkedIn
+      href: 
+      target: _blank
+    - text: Github
+      href: https://github.com/madisonenda 
+    - text: Email
+      href: mailto:madisonenda@bren.ucsb.edu 
 ---
 
-This is a Quarto website.
+My name is Madison Elisabeth Enda, and I am a 23-year-old aspiring coral biologist and ecologist from Los Angeles, CA. Ultimately, my goal is to apply for my PhD in marine ecology or biological oceanography, and work to preserve and protect coastal environments across the globe. I am particularly interested in analyzing the effects of nutrient pollution on coral reef ecosystems through statistical modeling, in order to define how certain stressors influence population structure and to predict the rate of evolutionary adaptation in marine foundation species.
+- Today, I am actively looking to participate in coastal restoration work, and eventually join a lab working in predictive modeling and/or the analysis of the physiological effects major environmental stressors incur on foundation species within coastal zones. 
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+##Education
 
-```{r}
-1 + 1
-```
+
+##
