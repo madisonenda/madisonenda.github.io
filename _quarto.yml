@@ -10,12 +10,17 @@ website:
       - href: index.qmd
         text: Home
       - about.qmd
+      - href: resources.qmd
+        text: Resources
 
 format:
   html:
-    theme: cosmo
+    theme: 
+      light: minty
+      dark: solar
     css: styles.css
-    toc: false 
+    toc: false
+    page-layout: full
 
 editor: visual
 
