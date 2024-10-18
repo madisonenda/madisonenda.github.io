@@ -1,15 +1,15 @@
 ---
 #title: "Madison Enda"
-image: Snorkel.JPG
+image: Headshot.tif
 about: 
   template: jolla
   image-shape: round
   image-width: 17em
   links: 
-    -  text: LinkedIn
-      href: 
+    - text: LinkedIn
       target: _blank
     - text: Github
+      icon: github
       href: https://github.com/madisonenda 
     - text: Email
       href: mailto:madisonenda@bren.ucsb.edu 

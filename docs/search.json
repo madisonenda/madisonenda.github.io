@@ -1,0 +1,37 @@
+[
+  {
+    "objectID": "DELETE-LATER/Practice.html",
+    "href": "DELETE-LATER/Practice.html",
+    "title": "Here is my level one header",
+    "section": "",
+    "text": "Here is my level one header\nHere is my first paragraph\nHere is my second paragraph, where you can read more about &lt;a MEDS\nThis is very important text!"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "ocean-y stuff"
+  },
+  {
+    "objectID": "about.html#what-i-do-for-work",
+    "href": "about.html#what-i-do-for-work",
+    "title": "About",
+    "section": "",
+    "text": "ocean-y stuff"
+  },
+  {
+    "objectID": "about.html#what-i-do-for-fun",
+    "href": "about.html#what-i-do-for-fun",
+    "title": "About",
+    "section": "What I do for fun",
+    "text": "What I do for fun\n\njust kidding I don’t have fun\n\nhere is [some more] text{.sage-text}\n\nhere is a line\nhere is another line"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Madison Enda",
+    "section": "",
+    "text": "My name is Madison Elisabeth Enda, and I am a 23-year-old aspiring coral biologist and ecologist from Los Angeles, CA. Ultimately, my goal is to apply for my PhD in marine ecology or biological oceanography, and work to preserve and protect coastal environments across the globe. I am particularly interested in analyzing the effects of nutrient pollution on coral reef ecosystems through statistical modeling, in order to define how certain stressors influence population structure and to predict the rate of evolutionary adaptation in marine foundation species. - Today, I am actively looking to participate in coastal restoration work, and eventually join a lab working in predictive modeling and/or the analysis of the physiological effects major environmental stressors incur on foundation species within coastal zones.\n##Education"
+  }
+]

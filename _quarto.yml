@@ -4,21 +4,24 @@ project:
   
 
 website:
-  title: "madisonenda.github.io"
+  title: "Madison Enda"
   navbar:
+    title: false 
     left:
       - href: index.qmd
         text: Home
       - about.qmd
       - href: resources.qmd
         text: Resources
+  page-footer: 
+   background: light
+   left: Copyright 2024, Madison Enda
+   right: This website is built with {{<fa brands github title="The ocotcat github icon">}}
 
 format:
   html:
-    theme: 
-      light: minty
-      dark: solar
-    css: styles.css
+    theme: styles.scss
+    mainfont: Quicksand 
     toc: false
     page-layout: full
 
