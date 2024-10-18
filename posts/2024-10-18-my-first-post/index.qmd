@@ -1,0 +1,37 @@
+---
+title: "blog post title"
+description: "a short catchy description of the blog post"
+author: 
+  - name: Madison Enda 
+    url: https://madisonenda.github.io/ 
+    orcid: 
+    affiliation: MEDS 
+    affiliation-url: https://bren.ucsb.edu/masters-programs/master-environmental-data-science/academics-meds-program> 
+    date: 2024-10-18 
+    categories: \[Quarto, MEDS, something-cool\]
+    toc: true
+    bibliography: references.bib
+    cls: plos-computational-biology.csl
+    image: "Cute_Allison_Horst.png"
+    draft: true
+    draft-mode: visible 
+---
+
+## This is my first section
+
+I'm going to insert a footnote here[^1]
+
+[^1]: Here is a new footnote
+
+## This is my second
+
+Here's my next paragraph[^2]
+
+[^2]: Here is my second footnote
+
+Citing previous research [@gaynor2022]
+
+```{r}
+#| echo: false
+knitr::include_graphics("Cute_Allison_Horst.png")
+```
