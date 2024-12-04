@@ -7,14 +7,14 @@ author:
     orcid: 
     affiliation: MEDS 
     affiliation-url: https://bren.ucsb.edu/masters-programs/master-environmental-data-science/academics-meds-program> 
-    date: 2024-10-18 
-    categories: \[Quarto, MEDS, something-cool\]
-    toc: true
-    bibliography: references.bib
-    cls: plos-computational-biology.csl
-    image: "Cute_Allison_Horst.png"
-    draft: true
-    draft-mode: visible 
+date: 2024-10-18 
+categories: \[Quarto, MEDS, something-cool\]
+toc: true
+bibliography: references.bib
+cls: plos-computational-biology.csl
+image: "Cute_Allison_Horst.png"
+#draft: false
+#draft-mode: visible 
 ---
 
 ## This is my first section

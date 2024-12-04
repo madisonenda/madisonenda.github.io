@@ -1,0 +1,39 @@
+---
+title: "Evaluating the 2017 Thomas Fire"
+description: "A brief investigation into the extent of damages and environmental degradation"
+author: 
+  - name: Madison Enda 
+    url: https://madisonenda.github.io/ 
+    affiliation: MEDS 
+    affiliation-url: https://bren.ucsb.edu/masters-programs/master-environmental-data-science/academics-meds-program> 
+date: 2024-12-04 
+categories: \[MEDS]
+toc: true
+bibliography: references.bib
+cls: plos-computational-biology.csl
+image: "thomas_fire.jpeg"
+#draft: false
+#draft-mode: visible 
+---
+
+## About the Thomas Fire
+
+Part of a string of devastating wildfires that tore through southern California in December of 2017, the Thomas Fire is widely agreed to be one of the largest in California history. Damaging or completely destroying approximately 3,137 structures over the course of 39 days[^1], the cause of the fire was determined to be downed power lines[^2] due to strong winds. 
+
+A major anthropogenic disaster like the Thomas Fire initiates a cascade of environmental, ecological, and social damages, the extent to which is monitored via large-scale interdisciplinary projects. A key component of the aforementioned process is geospatial analysis of the fire torn region, including the land and atmosphere directly affected by the burn. 
+
+In this post, we will walk through a couple examples of preliminary damage assessment using data provided by CAL FIRE, NASA and USGS's Landsat 8 satellite [^3], and data analysis methods developed by the Master's of Environmental Data Science program at the University of California, Santa Barbara [^4].
+
+
+[^1]: CAL FIRE. (2017). "Thomas Fire", Incidents. www.fire.ca.gov/incidents/2017/12/4/thomas-fire/. Last updated 09/23/2024. Date accessed: [12/04/2024]
+
+[^2]: Ventura County Fire Department. (2019). "VCFD Determines Cause of the Thomas Fire", news. 
+www.vcfd.org/news/vcfd-determines-cause-of-the-thomas-fire/. Date accessed: [12/04/2024]
+
+## This is my second
+
+Here's my next paragraph[^2]
+
+
+
+Citing previous research [@gaynor2022]
