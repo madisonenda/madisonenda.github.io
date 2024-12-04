@@ -1,0 +1,46 @@
+/*-- scss:defaults --*/
+
+//Import Google font
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap');
+
+// Create font Variables
+$libre-franklin:  "Libre Franklin", serif; 
+
+// Colors 
+$cream: #FDFBF7;
+$sage: #B6E3B9;
+$dark-green: #8E9A8F;
+$deep-teal: #80ADAD;
+$seafoam: #B3D6D0;
+$bright-blue: #A3FBEB;
+
+// Quarto Sass Variables
+$body-bg: $cream;
+$navbar-bg: $seafoam;
+$navbar-fg: $deep-teal;
+$navbar-hl: $bright-blue; 
+
+
+/*-- scss:rules --*/
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $libre-franklin;
+}
+
+h1, h2 {
+  letter-spacing: 5px;
+  font-weight: 800;
+}
+
+.title {
+  color: $dark-green;
+  font-style: italic;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.sage-text {
+  color: $sage;
+}
