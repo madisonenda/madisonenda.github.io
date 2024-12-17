@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Madison Enda">
+<meta name="dcterms.date" content="2024-12-13">
+<meta name="description" content="Are larval populations at increased risk?">
+
+<title>Nutrient Pollution on Coral Demography – Madison Enda</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../resources.html"> 
+<span class="menu-text">Resources</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../posts.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-page-left">
+      <h1 class="title">Nutrient Pollution on Coral Demography</h1>
+                  <div>
+        <div class="description">
+          Are larval populations at increased risk?
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">[MEDS]</div>
+              </div>
+                  </div>
+  </div>
+    
+  <div class="quarto-title-meta-author column-page-left">
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-heading">Affiliation</div>
+    
+      <div class="quarto-title-meta-contents">
+      <p class="author"><a href="https://madisonenda.github.io/">Madison Enda</a> </p>
+    </div>
+    <div class="quarto-title-meta-contents">
+          <p class="affiliation">
+              <a href="https://bren.ucsb.edu/masters-programs/master-environmental-data-science/academics-meds-program>">
+              MEDS
+              </a>
+            </p>
+        </div>
+    </div>
+
+  <div class="quarto-title-meta column-page-left">
+
+        
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">December 13, 2024</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#a-little-bit-of-background" id="toc-a-little-bit-of-background" class="nav-link active" data-scroll-target="#a-little-bit-of-background">A little bit of background…</a></li>
+  <li><a href="#moorea-long-term-ecological-research-site-4" id="toc-moorea-long-term-ecological-research-site-4" class="nav-link" data-scroll-target="#moorea-long-term-ecological-research-site-4">Moorea Long-Term Ecological Research Site 4:</a></li>
+  <li><a href="#question-and-hypotheses" id="toc-question-and-hypotheses" class="nav-link" data-scroll-target="#question-and-hypotheses">Question and Hypotheses:</a></li>
+  <li><a href="#data-access" id="toc-data-access" class="nav-link" data-scroll-target="#data-access">Data Access:</a></li>
+  <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods">Methods:</a></li>
+  <li><a href="#investigating-our-results" id="toc-investigating-our-results" class="nav-link" data-scroll-target="#investigating-our-results">Investigating our results:</a></li>
+  <li><a href="#link-to-repository" id="toc-link-to-repository" class="nav-link" data-scroll-target="#link-to-repository">Link to Repository:</a></li>
+  </ul>
+<div class="quarto-other-links"><h2>Other Links</h2><ul><li><a href="https://github.com/madisonenda/Coral_Larvae_DIN"><i class="bi bi-link-45deg"></i>Nutrient Pollution on Corals Repository</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+
+
+
+
+
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://w0.peakpx.com/wallpaper/559/914/HD-wallpaper-tahiti-coral-reef-ocean-underwater-tropics-french-polynesia.jpg" class="img-fluid figure-img"></p>
+<figcaption>Image 1. Island of Tahiti, very close by to Moorea. Source: whowhatwhere.com</figcaption>
+</figure>
+</div>
+<section id="a-little-bit-of-background" class="level2">
+<h2 class="anchored" data-anchor-id="a-little-bit-of-background">A little bit of background…</h2>
+<ul>
+<li><p>Due to global stressors, reef systems around the world have been decreasing in coral biomass. Mass bleaching events, as a result of increased sea surface temperature, have dramatically increased adult coral mortality overall.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p></li>
+<li><p>To forestall the effects of climate change, it is important to mitigate local stressors, which can exacerbate the negative effects of increased acidity, or temperature.</p></li>
+<li><p>One such major stressor is an increased concentration of nitrogen or phosphorus in the water column, referred to as “nutrient pollution”. As corals are best suited to nutrient poor systems, excessive amounts of nitrogen typically lead to increased coral mortality, whether via algal smothering, rapid proliferation of dinoflagellates (that leads to high body temperatures or lysed cells), or increasing coral disease.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p></li>
+<li><p>While adult corals’ high symbiont load allows them to utilize much of the nitrogen in the water column, greatly decreasing their aversion to ammonia and limiting the spread of disease, coral larvae have much smaller symbiont loads.</p></li>
+<li><p>In the case of horizontal transmission, coral larvae slowly take in their symbionts from the water around them before and during recruitment. It has been postulated that this low symbiont load would cause corals at this life stage to be disproportionately affected by nutrient pollution, as they are not able to maximize the benefit of this resource while protecting themselves from its disadvantages.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p></li>
+<li><p>To investigate this hypothesis, I decided to take a look at a small population of broadcast spawning corals on the island of Moorea, in French Polynesia, and their relationship to algae and nitrogen levels in their environment.</p></li>
+</ul>
+</section>
+<section id="moorea-long-term-ecological-research-site-4" class="level2">
+<h2 class="anchored" data-anchor-id="moorea-long-term-ecological-research-site-4">Moorea Long-Term Ecological Research Site 4:</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="site4.png" class="img-fluid figure-img" width="600"></p>
+<figcaption>Figure 1. A map of Moorea and it’s proximity to Tahiti</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li><p>Out of the three sites with available data, I selected Site 4 for this study based on larval connectivity models from the region<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> <a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>. Based on current patterns and broadcast spawning patterns of nearby reefs, Site 4 would likely have the most recruits, and therefore the most information on coral larval survival.</p></li>
+<li><p>This meant that all data sets I worked with had to be filtered to only observations from Site 4 of the LTER when applicable.</p></li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="larval_connect.png" class="img-fluid figure-img" width="600"></p>
+<figcaption>Figure 2. A larval connectivity model for French Polynesia. Lama, S. J., et al.&nbsp;2024</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>Of this data, I chose only a single species to analyze (due to time constraints), and selected the species with the highest sensitivity to temperature and chemical change as a result of its low tissue density: Acroporidae. It should be noted that coral taxonomy information was only recorded at the genus level, as it can be very difficult to species ID coral, especially Acropora.</li>
+</ul>
+</section>
+<section id="question-and-hypotheses" class="level2">
+<h2 class="anchored" data-anchor-id="question-and-hypotheses">Question and Hypotheses:</h2>
+<ul>
+<li>I was interested to see if there was any correlation between nitrogen concentration and larval recruitment for this region, and what effect this would have on the adult coral population. Ultimately, I decided on a linear regression model with an interaction clause between nitrogen and larval recruits, and coefficients for the effect of temperature, algal biomass, and larval recruits to predict the adult coral population. My hypothesis were as follows:</li>
+</ul>
+<p><strong>H0</strong>: Nitrogen has no correlation with larval recruits (coefficient is not significant), and thus no effect on the adult population.</p>
+<p><strong>HA</strong>: Nitrogen does correlate with larval recruitment (coefficient is significant), and thus has an effect on the adult population.</p>
+</section>
+<section id="data-access" class="level2">
+<h2 class="anchored" data-anchor-id="data-access">Data Access:</h2>
+<p>All data sets are publicly available on the Moorea LTER website. Here are links to each of the data sets used:</p>
+<p><a href="https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-mcr.31.43">Current Patterns and Biochemistry at Mooring Site FOR04</a> - This physical and biochemical data set contained a lot of highly sampled information, but for this project I only used ‘upper water column temperature’ to determine trends in annual temperature change.</p>
+<p><a href="https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-mcr.4001.13">Coral Recruitment Data (island wide)</a> - This data set involved counts of recruited corals to at each of the LTER sites. Observations were recorded by year, but not more specific than January-September, or September-January. This is likely due to aggregated spawning periods for each species recorded.</p>
+<p><a href="https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-mcr.20.21">Macroalgae and Nutrient Pollution (island wide)</a> - This data set records macroalgal pollution via dry weight of samples collected from the upper water column. A separate data set provided algal biomass at the benthic level, but was not utilized due to time constraints. nitrogen concentration is approximated from macroalgal data by recording percent weight nitrogen from the samples.</p>
+<p><a href="https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-mcr.4009.5">Demography Information for Three Key Coral Species (island wide)</a> - The demography information records counts and measurements (length, width, depth) of corals on the reef. Based on this data set, average adult counts per year were recorded.</p>
+<p><a href="https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-mcr.4.40">Percent Stony Coral Cover by Species (island wide)</a> - This data set utilizes multiple transect surveys across each LTER site, and approximates percent coral cover of each 0.25 square meter grid. This information is used to compile average annual coral cover for Site 4.</p>
+</section>
+<section id="methods" class="level2">
+<h2 class="anchored" data-anchor-id="methods">Methods:</h2>
+<section id="model-1" class="level4">
+<h4 class="anchored" data-anchor-id="model-1">Model 1:</h4>
+<ul>
+<li><p>I first loaded in the data sets and assigned them to relevant variables. Unfortunately, some of the data sets only recorded the year for each observation, despite having many observations within the same year.</p></li>
+<li><p>Therefore, I was not able to assess the effect of seasonality on nutrient pollution and larval recruitment (two highly ephemeral phenomena. After filtering to years of overlap between all sets, data was cleaned and I began joining sets to allow for ease of summary.</p></li>
+<li><p>For the first regression, we had almost no data points to work with, as the data was isolated to a three year time period by the adult coral counts collected from the demography data set.</p></li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="regression_1_table.png" class="img-fluid figure-img" width="800"></p>
+<figcaption>Table 1. Mean data for each column by year for the adult counts data. Algae is measured in dry-weight of samples, nitrogen in percent dry weight, temperature in degrees Celsius, and both recruits and adults in counts.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>This lack of data meant that I could not run a linear model with an interaction coefficient, and thus chose to look at the relationship between algae, larval recruits, and adult population size.</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="lm_summary.png" class="img-fluid figure-img" width="600"></p>
+<figcaption>Figure 3. Summary of the first linear regression model, with no interaction clause</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>In this original model, none of the coefficients are considered significant at a 90% confidence level (alpha of 0.05 for a two tailed test), and we fail to reject the null hypothesis. While there is a high adjusted R-squared value for this model, it is unlikely that’s an accurate representation of the correlation of our variables, due to the small sample size.</li>
+</ul>
+</section>
+<section id="model-2" class="level4">
+<h4 class="anchored" data-anchor-id="model-2">Model 2:</h4>
+<ul>
+<li>In order to utilize more of the data provided, I decided to look for a different metric of adult population size. I ended up using percent coral cover on the reef as a metric of adult coral growth and recruitment success. Since I was not able to effectively utilize the size metrics from the demography data regarding each adult count, this seemed an appropriate way to get a better approximation of overall contribution to the reef.</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="regression_2_table.png" class="img-fluid figure-img" width="800"></p>
+<figcaption>Table 2. Mean data for each column by year for the percent coral cover data. Again, algae is measured in dry-weight of samples, nitrogen in percent dry weight, temperature in degrees Celsius, and both recruits in counts. Coral cover is measured in percent of surveyed transects.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>With a bit more data to use (about 220 observations), I could now get a little bit better of an idea as to how algal biomass, nitrogen concentration, and coral cover were distributed by year.</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="joined_data_summary.png" class="img-fluid figure-img" width="800"></p>
+<figcaption>Table 3. Mean, Median, and Quartile Summaries for the 7 year data set (from 2009-2016). Dry-Weight refers to the dry-weight of algal samples, N to percent weight nitrogen of sample, temperature in degrees Celsius, recruits as counts of coral recruits, and coral cover as percent of surveyed transects.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>And with this data set, I was finally able to run a linear regression model with an interaction clause.</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="lm_summary_1.png" class="img-fluid figure-img" width="800"></p>
+<figcaption>Figure 4. Summary of linear regression model from the 7 year data set (with interaction)</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li><p>For the second model, while an interaction between nitrogen and larval recruits yielded the most magnanimous result, which falls in line with the alternate hypothesis, the coefficients could still not be considered significant at a 90% confidence level (alpha of 0.05 for a two tailed test). Once again, we fail to reject the null hypothesis.</p></li>
+<li><p>The adjusted R-squared value for this model is oddly high, which leads me to conclude that either a.) my sample size is much to small to accurately represent the correlation between these variables, or b.) we are fairly confident that nutrient pollution is not majorly affecting the larval population.</p></li>
+</ul>
+</section>
+</section>
+<section id="investigating-our-results" class="level2">
+<h2 class="anchored" data-anchor-id="investigating-our-results">Investigating our results:</h2>
+<section id="trends-in-our-data" class="level4">
+<h4 class="anchored" data-anchor-id="trends-in-our-data">Trends in Our data:</h4>
+<ul>
+<li>Truthfully, I was not expecting there to be such a small effect from nutrient pollution (nitrogen concentration) on annual larval recruits. I decided to take a look at my 7 year data set I used in the previous linear regression model to see how nitrogen concentration has been changing over this time period.</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="N_concentration_plot.png" class="img-fluid figure-img" width="800"></p>
+<figcaption>Figure 5. Plot of Nitrogen concentration (by percent dry weight of samples) over time</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li><p>This distribution sheds a little more light on my findings. Nitrogen concentration at Site 4 was not increasing over time, as it has been for shallower lagoon sites (like Sites 1-3 of the LTER) and regions with increased urbanization (comparable sites on Tahiti).</p></li>
+<li><p>Not only do we not have data from warmer years (2018-2024) where algal proliferation may have increased testing of nitrogen concentration and given better indicators of the true environmental values, but this data is also averaged out by year.</p></li>
+<li><p>As mentioned previously, nutrient pollution and algal biomass increases are highly ephemeral processes (increase with increased rainfall, temperature, or physical ocean processes like upwelling/ nutrient transport that shift with the seasons). If I was to repeat this analysis, I would try to find a data set on adult coral populations and larval recruitment that is at least sampled on a monthly basis.</p></li>
+</ul>
+</section>
+<section id="coral-larval-metabolic-activity" class="level4">
+<h4 class="anchored" data-anchor-id="coral-larval-metabolic-activity">Coral Larval Metabolic ACtivity:</h4>
+<ul>
+<li><p>But the trends in nutrient load for Site 4 may not be the only reason why there seems to be so little effect of nitrogen on larval recruitment and the adult population size!</p></li>
+<li><p>A few weeks ago, on November 13th of 2024, an article was published investigating the apparent resilience of coral larvae to thermal stress. Through their study, researchers discovered that coral larvae are able to sequester and direct excess nitrogen in their body to their limited symbiont load, almost “force feeding” their dinoflagellates, to produce enough energy to mitigate the hazardous effects of thermal stress.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> The researchers postulate that broadcast spawning coral larvae may even be more thermally tolerant than adult corals, so long as the cost-benefit of this “force-feeding” process ends in recruitment.</p></li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="sci_lit.png" class="img-fluid figure-img" width="500"></p>
+<figcaption>Image 2. Recently published scientific literature investigates the novel metabolic processes of coral larvae</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li><p>This novel metabolic activity would also mean that coral larvae <em>are</em> in fact capable of using nitrogen in the water column to their benefit, while minimizing the impact of it’s negative effects. At the very least, they are capable of bearing with the negative effects of increased nitrogen sequestration very well!</p></li>
+<li><p>While this is not at all what I was expecting to learn when I first began this analysis, I am happy to have learned about a new biological process in coral larvae, and I’m very excited to see what other studies will come out on this topic!</p></li>
+</ul>
+</section>
+</section>
+<section id="link-to-repository" class="level2">
+<h2 class="anchored" data-anchor-id="link-to-repository">Link to Repository:</h2>
+<p>There is a link to the repository provided in the sidebar, where the notebook for this project is housed, in case you would like to run the code for yourself. There is a brief presentation available that runs through the results as well. You can also use this link: <a href="https://github.com/madisonenda/Coral_Larvae_DIN">Nutrient Pollution on Corals Repository</a></p>
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Zhao, H., Yuan, M., Strokal, M., Wu, H. C., Liu, X., Murk, A., Kroeze, C., Osinga, R. Impacts of nitrogen pollution on corals in the context of global climate change and potential strategies to conserve coral reefs. Science of The Total Environment, 774, (2021). https://doi.org/10.1016/j.scitotenv.2021.145017<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Serrano, X.M., Miller, M.W., Hendee, J.C. et al.&nbsp;Effects of thermal stress and nitrate enrichment on the larval performance of two Caribbean reef corals. Coral Reefs 37, 173–182 (2018). https://doi.org/10.1007/s00338-017-1645-y<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Harnay, P., &amp; Putnam, H. M. Pocillopora meandrina daytime broadcast spawning in Moorea, French Polynesia. bioRxiv (2023). https://doi.org/10.1101/2023.10.05.558016<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>Lama, S.J., Lopera, L. &amp; Bracco, A. The role of mesoscale-driven connectivity patterns in coral recovery around Moorea and Tahiti, French Polynesia. Sci Rep 14, 22349 (2024). https://doi.org/10.1038/s41598-024-73185-2<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>Ani, C.J., Haller-Bull, V., Gilmour, J.P. et al.&nbsp;Connectivity modelling identifies sources and sinks of coral recruitment within reef clusters. Sci Rep 14, 13564 (2024). https://doi.org/10.1038/s41598-024-64388-8<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>Voolstra CR (2024) Youthful insight: Nitrogen sequestration in larvae provides clues to coral bleaching. PLoS Biol 22(11): e3002890. https://doi.org/10.1371/journal.pbio.3002890<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Copyright 2024, Madison Enda</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>This website is built with {{<fa brands="" github="" "the="" ocotcat="" icon"="">}}</fa></p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

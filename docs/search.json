@@ -1,5 +1,68 @@
 [
   {
+    "objectID": "posts/EDS220-Blog Post/index.html",
+    "href": "posts/EDS220-Blog Post/index.html",
+    "title": "Evaluating the 2017 Thomas Fire",
+    "section": "",
+    "text": "There is a link to the repository provided in the sidebar, where all of the Jupyter Notebooks are housed, in case you would like to run the code for yourself. Or, you can use this link: Thomas Fire Notebook Repository"
+  },
+  {
+    "objectID": "posts/EDS220-Blog Post/index.html#about-the-thomas-fire",
+    "href": "posts/EDS220-Blog Post/index.html#about-the-thomas-fire",
+    "title": "Evaluating the 2017 Thomas Fire",
+    "section": "About the Thomas Fire",
+    "text": "About the Thomas Fire\nPart of a string of devastating wildfires that tore through southern California in December of 2017, the Thomas Fire is widely agreed to be one of the largest in California history. It damaged or completely destroyed approximately 3,137 structures over the course of 39 days1. The cause of the fire was determined to be downed power lines2 due to strong winds.\n\n\n\n\n\n\n\n\n\nA major anthropogenic disaster like the Thomas Fire initiates a cascade of environmental, ecological, and social damages, the extent to which is monitored via large-scale interdisciplinary projects. A key component of the aforementioned process is geospatial analysis of the fire torn region, including the land and atmosphere directly affected by the burn.\nIn this post, we will walk through a couple examples of preliminary damage assessment using data provided by CAL FIRE, the Environmental Protection Agency (EPA)3, NASA and USGS’s Landsat 8 satellite 4, and data analysis methods developed by the Master’s of Environmental Data Science program at the University of California, Santa Barbara 5.\nUtilizing Air Quality Index (AQI) data provided by the Environmental Protection Agency, we can assess how the smoke and other air borne particles suspended in the low atmosphere (as a result of the Thomas Fire) affected air quality during the incident. Similarly, by comparing AQI data from before and after the fire, we can form a rough estimate of how much air borne pollution was contributed overall.\nUsing satellite raster data on specific wavelengths of light reflected off the surface of the earth, we can establish which colors in the visible spectrum are represented most in sampled regions (red, blue, green). The reflectance of specific wavelengths of light indicates substrate type ( vegetation, soil, pavement, etc.) and this information will allow us to identify regions that were burned during the Thomas Fire, i.e. changed from vegetation to scorched land.\nFrom this, we can create true color maps of a sampled area ( red corresponds to red, blue to blue, etc.), or, using near-infrared or short-wave infrared wavelength information, could utilize other colors to best contrast fire scars in the region. We will use both of these methods to assess the spatial extent of the 2017 Thomas Fire damage."
+  },
+  {
+    "objectID": "posts/EDS220-Blog Post/index.html#assessing-air-quality-index-after-the-fire",
+    "href": "posts/EDS220-Blog Post/index.html#assessing-air-quality-index-after-the-fire",
+    "title": "Evaluating the 2017 Thomas Fire",
+    "section": "Assessing Air Quality Index After the Fire",
+    "text": "Assessing Air Quality Index After the Fire\nWe start off loading in our libraries for all the notebooks, and loading in the data as variables with intuitive names (‘aqi’ for Air Quality Index, and the 17 or 18 for the year 2017 or 2018)\n\n\n\n\n\n\n\n\n\nNext, we need to combine our 2017 and 2018 data sets by stacking them, using the pd.concat() function\n\n\n\n\n\n\n\n\n\nWe now have one cohesive data set. We can make it easier to work with as well, by setting a uniform standard for column naming.\nFor this task, we use str.lower() chained with str.replace(), to set all the names to lowercase and replace spaces with underscores.\n\n\n\n\n\n\n\n\n\nAfter our names have been made uniform and easier to call, we can filter the data set to our area of interest (Santa Barbara for the area of the Thomas Fire), and then drop all columns related to location identity, (‘county_name’, ‘state_code’, etc.) to omit redundancies.\n\n\n\n\n\n\n\n\n\nNext, working with the dates…\nIn Python, a lot of the trickiness of working with dates can be alleviated using the function pd.to_datetime() and providing the column of dates you wish to convert. Unlike other coding languages/interfaces, pandas already has a library of potential date formats it compares your data to, and matches it to any stored in its data base.\nOnce that’s done, we can set our date column to be our index for easy identification of the observations.\n\n\n\n\n\n\n\n\n\nIn order to have a metric to compare the AQI to before, during, and after the fire, we need to take averages. However, just taking the average of the three aforementioned instances doesn’t allow for pattern or trend observation with much certainty.\nInstead, we will use a 5-day rolling average to hopefully better identify the trend of AQI from the fire. To do this, we will chain the .rolling() and .mean() functions.\n\n\n\n\n\n\n\n\n\nThen we create a new column for this averaged data using the .assign() function.\n\n\n\n\n\n\n\n\n\nAnd now the fun part!\nWe get to plot the lines of the AQI over time in Santa Barbara, using the exact values and the 5-day rolling average.\n\n\n\n\n\n\n\n\n\nWe can clearly see a big spike in trend lines, which corresponds to a huge increase in air pollution around the time of the fire, that decreases over the course of a couple months (which is easier to see using the 5-day average)."
+  },
+  {
+    "objectID": "posts/EDS220-Blog Post/index.html#identifying-the-thomas-fire-perimeter",
+    "href": "posts/EDS220-Blog Post/index.html#identifying-the-thomas-fire-perimeter",
+    "title": "Evaluating the 2017 Thomas Fire",
+    "section": "Identifying the Thomas Fire Perimeter",
+    "text": "Identifying the Thomas Fire Perimeter\nTo create a true color or false color image of the affected area, we will first need an outline of the extent of the Thomas Fire that we can clip raster data to.\nHere is how we can use historical fire data from CAL FIRE to create that boundary.\nTo start, we will load in our boundary data as a variable called ‘fire_perimeters’, since it is not yet filtered to only the Thomas Fire.\n\n\n\n\n\n\n\n\n\nIn order to filter the data, we have to specify both the location (Santa Barbara) and the year (2017), as there unfortunately have been multiple major fires in the Santa Barbara county area, and many other fires that occurred that year.\n\n\n\n\n\n\n\n\n\nAlright, we now have the boundary of the specific fire we are looking for! We can take a look at the shape of the boundary with a very quick plot. The warning lets us know that there is a new way of specifying geometry type when plotting spatial data, but that doesn’t affect what we are looking for here.\n\n\n\n\n\n\n\n\n\nNow that we’ve confirmed the boundary is proper, we can save this file for use in our next map, using ‘name.to_file()’\n\n\n\n\n\n\n\n\n\nWe may receive a warning that let’s us know that column names may be shorted in the Shapefile, but don’t worry, as it won’t affect anything we’ve done."
+  },
+  {
+    "objectID": "posts/EDS220-Blog Post/index.html#false-color-image-of-fire-scars",
+    "href": "posts/EDS220-Blog Post/index.html#false-color-image-of-fire-scars",
+    "title": "Evaluating the 2017 Thomas Fire",
+    "section": "False Color Image of Fire Scars",
+    "text": "False Color Image of Fire Scars\nWith our 2017 Thomas Fire Perimeter, we can now utilize the Landsat 8 satellite data to create rasters that show different types of substrate over the area the fire occurred.\nThe Landsat 8 satellite measures a multitude of radiance wavelengths, but we are mainly interested in red band, blue band, green band, near-infrared (NIR), and shortwave infrared (SWIR22) data.\nThe data set consists of only one band, with float64 x and y coordinates and our 5 main variables of interest are identified as: - red (red band with wavelengths 0.64-0.67 micrometers),\n\ngreen (green band with wavelengths 0.53-0.59 micrometers),\nblue (blue band with wavelengths 0.45-0.51 micrometers),\nnir08 (near-infrared band with wavelengths 0.85-0.88 micrometers),\nswir22 (shortwave infrared band with wavelengths from 2.11-2.29 micrometers) .\n\nWe begin by, once again, assigning the data to a variable. However, in this instance our data set consists of layered rasters, which is kept in the ‘xarray’ format. Thus, we will now begin working with the ‘Rioxarray’ package we loaded in earlier. This package helps us more easily sift through bands, letting us use only the wavelengths we want for each type of image.\nWe will also use os to create a file path to our data.\n\n\n\n\n\n\n\n\n\nNow we can use that file path to load in our data, and assign it to a variable called ‘landsat’\n\n\n\n\n\n\n\n\n\nBecause there is only one band, we can drop the band information, as it is a redundancy, using .squeeze() to remove the length, and .drop_vars() to remove the band.\n\n\n\n\n\n\n\n\n\nWith the band dimension dropped, lets make our first map!\nFor a true color image, we will assign the red, green, and blue bands to their corresponding colors. By specifying that ‘robust’ = True in the plot.imshow() function, we ensure that the colors are represented appropriately.\n\n\n\n\n\n\n\n\n\nLet’s contrast this model with a false color one, where the scars from the fire, typically displayed in brown in a true color image, will now be displayed in red. This will make it easier to analyze the extent of the fire damage.\n\n\n\n\n\n\n\n\n\nThe damaged area from the Thomas Fire can be seen much more clearly now! We can change the extent of the image to “zoom” in to the fire scars now.\nFirst, we will have to load in our fire boundary from earlier. After matching the coordinate reference systems of the data (CRS), we can create the false color image clipped to the extent of the Thomas Fire perimeter.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThen we can plot the raster again and examine our area of interest…\n\n\n\n\n\n\n\n\n\nThe fire scars are bright red now, and contrast quite well against the rest of the landscape. Using the bounds of the Thomas Fire perimeter, we can set the boundary to our area of interest and “zoom” in on the scars.\n\n\n\n\n\n\n\n\n\nFinally…we have a simple map of the extent of the 2017 Thomas Fire Damage!"
+  },
+  {
+    "objectID": "posts/EDS220-Blog Post/index.html#link-to-repository",
+    "href": "posts/EDS220-Blog Post/index.html#link-to-repository",
+    "title": "Evaluating the 2017 Thomas Fire",
+    "section": "",
+    "text": "There is a link to the repository provided in the sidebar, where all of the Jupyter Notebooks are housed, in case you would like to run the code for yourself. Or, you can use this link: Thomas Fire Notebook Repository"
+  },
+  {
+    "objectID": "posts/EDS220-Blog Post/index.html#footnotes",
+    "href": "posts/EDS220-Blog Post/index.html#footnotes",
+    "title": "Evaluating the 2017 Thomas Fire",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nCAL FIRE. (2017). “Thomas Fire”, Incidents. www.fire.ca.gov/incidents/2017/12/4/thomas-fire/. Last updated 09/23/2024. Date accessed: [12/04/2024]↩︎\nVentura County Fire Department. (2019). “VCFD Determines Cause of the Thomas Fire”, news. www.vcfd.org/news/vcfd-determines-cause-of-the-thomas-fire/. Date accessed: [12/04/2024]↩︎\nEnvironmental Protection Agency. (2024). “Air Quality Index Basics”, Air Now.https://www.airnow.gov/aqi/aqi-basics/. date accessed: [12/04/2024]↩︎\nNASA, USGS, Microsoft.(2024). “Landsat Collection 2 Level-2”, Planetary Computer. https://planetarycomputer.microsoft.com/dataset/landsat-c2-l2. date accessed: [11/23/2024]↩︎\nGalaz Garcia, C. (2024). Assignment #4, EDS 220 Working With Environmental Datasets, Masters of Environmental Data Science. University of California, Santa Barbara. https://meds-eds-220.github.io/MEDS-eds-220-course/assignments/assignment4.html. date accessed: [12/04/2024]↩︎"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Madison Enda",
+    "section": "",
+    "text": "My name is Madison Elisabeth Enda, and I am a 23-year-old aspiring biological oceanographer and ecologist from Los Angeles, CA. Ultimately, my goal is to preserve and protect coastal environments across the globe. I am particularly interested in analyzing the effects of nutrient pollution on coral reef ecosystems through statistical modeling, in order to define how certain stressors influence population structure and to predict the rate of evolutionary adaptation in marine foundation species.\nToday, I am actively looking to participate in coastal restoration work, and eventually join a lab working in predictive modeling and/or the analysis of the physiological effects major environmental stressors incur on foundation species within coastal zones."
+  },
+  {
+    "objectID": "index.html#hi-there-thanks-for-stopping-by",
+    "href": "index.html#hi-there-thanks-for-stopping-by",
+    "title": "Madison Enda",
+    "section": "",
+    "text": "My name is Madison Elisabeth Enda, and I am a 23-year-old aspiring biological oceanographer and ecologist from Los Angeles, CA. Ultimately, my goal is to preserve and protect coastal environments across the globe. I am particularly interested in analyzing the effects of nutrient pollution on coral reef ecosystems through statistical modeling, in order to define how certain stressors influence population structure and to predict the rate of evolutionary adaptation in marine foundation species.\nToday, I am actively looking to participate in coastal restoration work, and eventually join a lab working in predictive modeling and/or the analysis of the physiological effects major environmental stressors incur on foundation species within coastal zones."
+  },
+  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
@@ -21,59 +84,129 @@
     "text": "What I do for fun\n\njust kidding I don’t have fun\n\nhere is [some more] text{.sage-text}\n\nhere is a line\nhere is another line"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Madison Enda",
-    "section": "",
-    "text": "Today, I am actively looking to participate in coastal restoration work, and eventually join a lab working in predictive modeling and/or the analysis of the physiological effects major environmental stressors incur on foundation species within coastal zones."
-  },
-  {
-    "objectID": "posts.html",
-    "href": "posts.html",
-    "title": "Blog",
-    "section": "",
-    "text": "[MEDS]\n\n\n\nA brief investigation into the extent of damages and environmental degradation\n\n\n\nMadison Enda\n\n\nDec 4, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n[Quarto, MEDS, something-cool]\n\n\n\na short catchy description of the blog post\n\n\n\nMadison Enda\n\n\nOct 18, 2024\n\n\n\n\n\n\n\n\nNo matching items"
-  },
-  {
     "objectID": "posts/2024-10-18-my-first-post/index.html",
     "href": "posts/2024-10-18-my-first-post/index.html",
-    "title": "blog post title",
+    "title": "Nutrient Pollution on Coral Demography",
     "section": "",
-    "text": "I’m going to insert a footnote here1"
+    "text": "Due to global stressors, reef systems around the world have been decreasing in coral biomass. Mass bleaching events, as a result of increased sea surface temperature, have dramatically increased adult coral mortality overall.\nTo forestall the effects of climate change, it is important to mitigate local stressors, which can exacerbate the negative effects of increased acidity, or temperature.\nOne such major stressor is an increased concentration of nitrogen or phosphorus in the water column, referred to as “nutrient pollution”. As corals are best suited to nutrient poor systems, excessive amounts of nitrogen typically lead to increased coral mortality, whether via algal smothering, rapid proliferation of dinoflagellates (that leads to high body temperatures or lysed cells), or increasing coral disease.\nWhile adult corals’ high symbiont load allows them to utilize much of the nitrogen in the water column, greatly decreasing their aversion to ammonia and limiting the spread of disease, coral larvae have much smaller symbiont loads.\nIn the case of horizontal transmission, coral larvae slowly take in their symbionts from the water around them before and during recruitment. It has been postulated that this low symbiont load would cause corals at this life stage to be disproportionately affected by nutrient pollution, as they are not able to maximize the benefit of this resource while protecting themselves from its disadvantages.\nTo investigate this hypothesis, I decided to take a look at a small population"
   },
   {
     "objectID": "posts/2024-10-18-my-first-post/index.html#this-is-my-first-section",
     "href": "posts/2024-10-18-my-first-post/index.html#this-is-my-first-section",
-    "title": "blog post title",
+    "title": "Nutrient Pollution on Coral Demography",
     "section": "",
     "text": "I’m going to insert a footnote here1"
   },
   {
     "objectID": "posts/2024-10-18-my-first-post/index.html#this-is-my-second",
     "href": "posts/2024-10-18-my-first-post/index.html#this-is-my-second",
-    "title": "blog post title",
+    "title": "Nutrient Pollution on Coral Demography",
     "section": "This is my second",
-    "text": "This is my second\nHere’s my next paragraph2\nCiting previous research (Gaynor et al. 2022)"
+    "text": "This is my second\nHere’s my next paragraph1\nCiting previous research (Gaynor et al. 2022)"
   },
   {
     "objectID": "posts/2024-10-18-my-first-post/index.html#footnotes",
     "href": "posts/2024-10-18-my-first-post/index.html#footnotes",
-    "title": "blog post title",
+    "title": "Nutrient Pollution on Coral Demography",
     "section": "Footnotes",
-    "text": "Footnotes\n\n\nHere is a new footnote↩︎\nHere is my second footnote↩︎"
+    "text": "Footnotes\n\n\nHere is my second footnote↩︎"
   },
   {
-    "objectID": "posts/EDS220-Blog Post/index.html",
-    "href": "posts/EDS220-Blog Post/index.html",
-    "title": "Evaluating the 2017 Thomas Fire",
+    "objectID": "posts.html",
+    "href": "posts.html",
+    "title": "Blog",
     "section": "",
-    "text": "Part of a string of devastating wildfires that tore through southern California in December of 2017, the Thomas Fire is widely agreed to be one of the largest in California history. Damaging or completely destroying approximately 3,137 structures over the course of 39 days1, the cause of the fire was determined to be downed power lines2 due to strong winds.\nA major anthropogenic disaster like the Thomas Fire initiates a cascade of environmental, ecological, and social damages, the extent to which is monitored via large-scale interdisciplinary projects. A key component of the aforementioned process is geospatial analysis of the fire torn region, including the land and atmosphere directly affected by the burn.\nIn this post, we will walk through a couple examples of preliminary damage assessment using data provided by CAL FIRE, NASA and USGS’s Landsat 8 satellite [^3], and data analysis methods developed by the Master’s of Environmental Data Science program at the University of California, Santa Barbara [^4]."
+    "text": "Nutrient Pollution on Coral Demography\n\n\n\n[MEDS]\n\n\n\nAre larval populations at increased risk?\n\n\n\nMadison Enda\n\n\nDec 13, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEvaluating the 2017 Thomas Fire\n\n\n\n[MEDS]\n\n\n\nA brief investigation into the extent of damages and environmental degradation\n\n\n\nMadison Enda\n\n\nDec 4, 2024\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "posts/EDS220-Blog Post/index.html#this-is-my-second",
-    "href": "posts/EDS220-Blog Post/index.html#this-is-my-second",
-    "title": "Evaluating the 2017 Thomas Fire",
+    "objectID": "posts/2024-10-18-my-first-post/index.html#a-little-bit-of-background",
+    "href": "posts/2024-10-18-my-first-post/index.html#a-little-bit-of-background",
+    "title": "Nutrient Pollution on Coral Demography",
+    "section": "",
+    "text": "Due to global stressors, reef systems around the world have been decreasing in coral biomass. Mass bleaching events, as a result of increased sea surface temperature, have dramatically increased adult coral mortality overall.\nTo forestall the effects of climate change, it is important to mitigate local stressors, which can exacerbate the negative effects of increased acidity, or temperature.\nOne such major stressor is an increased concentration of nitrogen or phosphorus in the water column, referred to as “nutrient pollution”. As corals are best suited to nutrient poor systems, excessive amounts of nitrogen typically lead to increased coral mortality, whether via algal smothering, rapid proliferation of dinoflagellates (that leads to high body temperatures or lysed cells), or increasing coral disease.\nWhile adult corals’ high symbiont load allows them to utilize much of the nitrogen in the water column, greatly decreasing their aversion to ammonia and limiting the spread of disease, coral larvae have much smaller symbiont loads.\nIn the case of horizontal transmission, coral larvae slowly take in their symbionts from the water around them before and during recruitment. It has been postulated that this low symbiont load would cause corals at this life stage to be disproportionately affected by nutrient pollution, as they are not able to maximize the benefit of this resource while protecting themselves from its disadvantages.\nTo investigate this hypothesis, I decided to take a look at a small population"
+  },
+  {
+    "objectID": "posts/2024-10-18-my-first-post/index.html#link-to-repository",
+    "href": "posts/2024-10-18-my-first-post/index.html#link-to-repository",
+    "title": "Nutrient Pollution on Coral Demography",
+    "section": "Link to Repository",
+    "text": "Link to Repository\nThere is a link to the repository provided in the sidebar, where the notebook for this project is housed, in case you would like to run the code for yourself. There is a brief presentation available that runs through the results as well. You can also use this link: Nutrient Pollution on Corals Notebook Repository"
+  },
+  {
+    "objectID": "posts/EDS222-Blog-Post/index.html",
+    "href": "posts/EDS222-Blog-Post/index.html",
+    "title": "Nutrient Pollution on Coral Demography",
+    "section": "",
+    "text": "Image 1. Island of Tahiti, very close by to Moorea. Source: whowhatwhere.com"
+  },
+  {
+    "objectID": "posts/EDS222-Blog-Post/index.html#a-little-bit-of-background",
+    "href": "posts/EDS222-Blog-Post/index.html#a-little-bit-of-background",
+    "title": "Nutrient Pollution on Coral Demography",
+    "section": "A little bit of background…",
+    "text": "A little bit of background…\n\nDue to global stressors, reef systems around the world have been decreasing in coral biomass. Mass bleaching events, as a result of increased sea surface temperature, have dramatically increased adult coral mortality overall.1\nTo forestall the effects of climate change, it is important to mitigate local stressors, which can exacerbate the negative effects of increased acidity, or temperature.\nOne such major stressor is an increased concentration of nitrogen or phosphorus in the water column, referred to as “nutrient pollution”. As corals are best suited to nutrient poor systems, excessive amounts of nitrogen typically lead to increased coral mortality, whether via algal smothering, rapid proliferation of dinoflagellates (that leads to high body temperatures or lysed cells), or increasing coral disease.2\nWhile adult corals’ high symbiont load allows them to utilize much of the nitrogen in the water column, greatly decreasing their aversion to ammonia and limiting the spread of disease, coral larvae have much smaller symbiont loads.\nIn the case of horizontal transmission, coral larvae slowly take in their symbionts from the water around them before and during recruitment. It has been postulated that this low symbiont load would cause corals at this life stage to be disproportionately affected by nutrient pollution, as they are not able to maximize the benefit of this resource while protecting themselves from its disadvantages.3\nTo investigate this hypothesis, I decided to take a look at a small population of broadcast spawning corals on the island of Moorea, in French Polynesia, and their relationship to algae and nitrogen levels in their environment."
+  },
+  {
+    "objectID": "posts/EDS222-Blog-Post/index.html#this-is-my-second",
+    "href": "posts/EDS222-Blog-Post/index.html#this-is-my-second",
+    "title": "Nutrient Pollution on Coral Demography",
     "section": "This is my second",
-    "text": "This is my second\nHere’s my next paragraph3\nCiting previous research (gaynor2022?)"
+    "text": "This is my second\nHere’s my next paragraph1\nCiting previous research (Gaynor et al. 2022)"
+  },
+  {
+    "objectID": "posts/EDS222-Blog-Post/index.html#link-to-repository",
+    "href": "posts/EDS222-Blog-Post/index.html#link-to-repository",
+    "title": "Nutrient Pollution on Coral Demography",
+    "section": "Link to Repository:",
+    "text": "Link to Repository:\nThere is a link to the repository provided in the sidebar, where the notebook for this project is housed, in case you would like to run the code for yourself. There is a brief presentation available that runs through the results as well. You can also use this link: Nutrient Pollution on Corals Repository"
+  },
+  {
+    "objectID": "posts/EDS222-Blog-Post/index.html#footnotes",
+    "href": "posts/EDS222-Blog-Post/index.html#footnotes",
+    "title": "Nutrient Pollution on Coral Demography",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nZhao, H., Yuan, M., Strokal, M., Wu, H. C., Liu, X., Murk, A., Kroeze, C., Osinga, R. Impacts of nitrogen pollution on corals in the context of global climate change and potential strategies to conserve coral reefs. Science of The Total Environment, 774, (2021). https://doi.org/10.1016/j.scitotenv.2021.145017↩︎\nSerrano, X.M., Miller, M.W., Hendee, J.C. et al. Effects of thermal stress and nitrate enrichment on the larval performance of two Caribbean reef corals. Coral Reefs 37, 173–182 (2018). https://doi.org/10.1007/s00338-017-1645-y↩︎\nHarnay, P., & Putnam, H. M. Pocillopora meandrina daytime broadcast spawning in Moorea, French Polynesia. bioRxiv (2023). https://doi.org/10.1101/2023.10.05.558016↩︎\nLama, S.J., Lopera, L. & Bracco, A. The role of mesoscale-driven connectivity patterns in coral recovery around Moorea and Tahiti, French Polynesia. Sci Rep 14, 22349 (2024). https://doi.org/10.1038/s41598-024-73185-2↩︎\nAni, C.J., Haller-Bull, V., Gilmour, J.P. et al. Connectivity modelling identifies sources and sinks of coral recruitment within reef clusters. Sci Rep 14, 13564 (2024). https://doi.org/10.1038/s41598-024-64388-8↩︎\nVoolstra CR (2024) Youthful insight: Nitrogen sequestration in larvae provides clues to coral bleaching. PLoS Biol 22(11): e3002890. https://doi.org/10.1371/journal.pbio.3002890↩︎"
+  },
+  {
+    "objectID": "posts/EDS222-Blog-Post/index.html#moorea-long-term-ecological-research-site-4",
+    "href": "posts/EDS222-Blog-Post/index.html#moorea-long-term-ecological-research-site-4",
+    "title": "Nutrient Pollution on Coral Demography",
+    "section": "Moorea Long-Term Ecological Research Site 4:",
+    "text": "Moorea Long-Term Ecological Research Site 4:\n\n\n\n\n\nFigure 1. A map of Moorea and it’s proximity to Tahiti\n\n\n\n\n\nOut of the three sites with available data, I selected Site 4 for this study based on larval connectivity models from the region4 5. Based on current patterns and broadcast spawning patterns of nearby reefs, Site 4 would likely have the most recruits, and therefore the most information on coral larval survival.\nThis meant that all data sets I worked with had to be filtered to only observations from Site 4 of the LTER when applicable.\n\n\n\n\n\n\nFigure 2. A larval connectivity model for French Polynesia. Lama, S. J., et al. 2024\n\n\n\n\n\nOf this data, I chose only a single species to analyze (due to time constraints), and selected the species with the highest sensitivity to temperature and chemical change as a result of its low tissue density: Acroporidae. It should be noted that coral taxonomy information was only recorded at the genus level, as it can be very difficult to species ID coral, especially Acropora."
+  },
+  {
+    "objectID": "posts/EDS222-Blog-Post/index.html#data-access",
+    "href": "posts/EDS222-Blog-Post/index.html#data-access",
+    "title": "Nutrient Pollution on Coral Demography",
+    "section": "Data Access:",
+    "text": "Data Access:\nAll data sets are publicly available on the Moorea LTER website. Here are links to each of the data sets used:\nCurrent Patterns and Biochemistry at Mooring Site FOR04 - This physical and biochemical data set contained a lot of highly sampled information, but for this project I only used ‘upper water column temperature’ to determine trends in annual temperature change.\nCoral Recruitment Data (island wide) - This data set involved counts of recruited corals to at each of the LTER sites. Observations were recorded by year, but not more specific than January-September, or September-January. This is likely due to aggregated spawning periods for each species recorded.\nMacroalgae and Nutrient Pollution (island wide) - This data set records macroalgal pollution via dry weight of samples collected from the upper water column. A separate data set provided algal biomass at the benthic level, but was not utilized due to time constraints. nitrogen concentration is approximated from macroalgal data by recording percent weight nitrogen from the samples.\nDemography Information for Three Key Coral Species (island wide) - The demography information records counts and measurements (length, width, depth) of corals on the reef. Based on this data set, average adult counts per year were recorded.\nPercent Stony Coral Cover by Species (island wide) - This data set utilizes multiple transect surveys across each LTER site, and approximates percent coral cover of each 0.25 square meter grid. This information is used to compile average annual coral cover for Site 4."
+  },
+  {
+    "objectID": "posts/EDS222-Blog-Post/index.html#references",
+    "href": "posts/EDS222-Blog-Post/index.html#references",
+    "title": "Nutrient Pollution on Coral Demography",
+    "section": "References:",
+    "text": "References:"
+  },
+  {
+    "objectID": "posts/EDS222-Blog-Post/index.html#question-and-hypotheses",
+    "href": "posts/EDS222-Blog-Post/index.html#question-and-hypotheses",
+    "title": "Nutrient Pollution on Coral Demography",
+    "section": "Question and Hypotheses:",
+    "text": "Question and Hypotheses:\n\nI was interested to see if there was any correlation between nitrogen concentration and larval recruitment for this region, and what effect this would have on the adult coral population. Ultimately, I decided on a linear regression model with an interaction clause between nitrogen and larval recruits, and coefficients for the effect of temperature, algal biomass, and larval recruits to predict the adult coral population. My hypothesis were as follows:\n\nH0: Nitrogen has no correlation with larval recruits (coefficient is not significant), and thus no effect on the adult population.\nHA: Nitrogen does correlate with larval recruitment (coefficient is significant), and thus has an effect on the adult population."
+  },
+  {
+    "objectID": "posts/EDS222-Blog-Post/index.html#methods",
+    "href": "posts/EDS222-Blog-Post/index.html#methods",
+    "title": "Nutrient Pollution on Coral Demography",
+    "section": "Methods:",
+    "text": "Methods:\n\nModel 1:\n\nI first loaded in the data sets and assigned them to relevant variables. Unfortunately, some of the data sets only recorded the year for each observation, despite having many observations within the same year.\nTherefore, I was not able to assess the effect of seasonality on nutrient pollution and larval recruitment (two highly ephemeral phenomena. After filtering to years of overlap between all sets, data was cleaned and I began joining sets to allow for ease of summary.\nFor the first regression, we had almost no data points to work with, as the data was isolated to a three year time period by the adult coral counts collected from the demography data set.\n\n\n\n\n\n\nTable 1. Mean data for each column by year for the adult counts data. Algae is measured in dry-weight of samples, nitrogen in percent dry weight, temperature in degrees Celsius, and both recruits and adults in counts.\n\n\n\n\n\nThis lack of data meant that I could not run a linear model with an interaction coefficient, and thus chose to look at the relationship between algae, larval recruits, and adult population size.\n\n\n\n\n\n\nFigure 3. Summary of the first linear regression model, with no interaction clause\n\n\n\n\n\nIn this original model, none of the coefficients are considered significant at a 90% confidence level (alpha of 0.05 for a two tailed test), and we fail to reject the null hypothesis. While there is a high adjusted R-squared value for this model, it is unlikely that’s an accurate representation of the correlation of our variables, due to the small sample size.\n\n\n\nModel 2:\n\nIn order to utilize more of the data provided, I decided to look for a different metric of adult population size. I ended up using percent coral cover on the reef as a metric of adult coral growth and recruitment success. Since I was not able to effectively utilize the size metrics from the demography data regarding each adult count, this seemed an appropriate way to get a better approximation of overall contribution to the reef.\n\n\n\n\n\n\nTable 2. Mean data for each column by year for the percent coral cover data. Again, algae is measured in dry-weight of samples, nitrogen in percent dry weight, temperature in degrees Celsius, and both recruits in counts. Coral cover is measured in percent of surveyed transects.\n\n\n\n\n\nWith a bit more data to use (about 220 observations), I could now get a little bit better of an idea as to how algal biomass, nitrogen concentration, and coral cover were distributed by year.\n\n\n\n\n\n\nTable 3. Mean, Median, and Quartile Summaries for the 7 year data set (from 2009-2016). Dry-Weight refers to the dry-weight of algal samples, N to percent weight nitrogen of sample, temperature in degrees Celsius, recruits as counts of coral recruits, and coral cover as percent of surveyed transects.\n\n\n\n\n\nAnd with this data set, I was finally able to run a linear regression model with an interaction clause.\n\n\n\n\n\n\nFigure 4. Summary of linear regression model from the 7 year data set (with interaction)\n\n\n\n\n\nFor the second model, while an interaction between nitrogen and larval recruits yielded the most magnanimous result, which falls in line with the alternate hypothesis, the coefficients could still not be considered significant at a 90% confidence level (alpha of 0.05 for a two tailed test). Once again, we fail to reject the null hypothesis.\nThe adjusted R-squared value for this model is oddly high, which leads me to conclude that either a.) my sample size is much to small to accurately represent the correlation between these variables, or b.) we are fairly confident that nutrient pollution is not majorly affecting the larval population."
+  },
+  {
+    "objectID": "posts/EDS222-Blog-Post/index.html#investigating-our-results",
+    "href": "posts/EDS222-Blog-Post/index.html#investigating-our-results",
+    "title": "Nutrient Pollution on Coral Demography",
+    "section": "Investigating our results:",
+    "text": "Investigating our results:\n\nTrends in Our data:\n\nTruthfully, I was not expecting there to be such a small effect from nutrient pollution (nitrogen concentration) on annual larval recruits. I decided to take a look at my 7 year data set I used in the previous linear regression model to see how nitrogen concentration has been changing over this time period.\n\n\n\n\n\n\nFigure 5. Plot of Nitrogen concentration (by percent dry weight of samples) over time\n\n\n\n\n\nThis distribution sheds a little more light on my findings. Nitrogen concentration at Site 4 was not increasing over time, as it has been for shallower lagoon sites (like Sites 1-3 of the LTER) and regions with increased urbanization (comparable sites on Tahiti).\nNot only do we not have data from warmer years (2018-2024) where algal proliferation may have increased testing of nitrogen concentration and given better indicators of the true environmental values, but this data is also averaged out by year.\nAs mentioned previously, nutrient pollution and algal biomass increases are highly ephemeral processes (increase with increased rainfall, temperature, or physical ocean processes like upwelling/ nutrient transport that shift with the seasons). If I was to repeat this analysis, I would try to find a data set on adult coral populations and larval recruitment that is at least sampled on a monthly basis.\n\n\n\nCoral Larval Metabolic ACtivity:\n\nBut the trends in nutrient load for Site 4 may not be the only reason why there seems to be so little effect of nitrogen on larval recruitment and the adult population size!\nA few weeks ago, on November 13th of 2024, an article was published investigating the apparent resilience of coral larvae to thermal stress. Through their study, researchers discovered that coral larvae are able to sequester and direct excess nitrogen in their body to their limited symbiont load, almost “force feeding” their dinoflagellates, to produce enough energy to mitigate the hazardous effects of thermal stress.6 The researchers postulate that broadcast spawning coral larvae may even be more thermally tolerant than adult corals, so long as the cost-benefit of this “force-feeding” process ends in recruitment.\n\n\n\n\n\n\nImage 2. Recently published scientific literature investigates the novel metabolic processes of coral larvae\n\n\n\n\n\nThis novel metabolic activity would also mean that coral larvae are in fact capable of using nitrogen in the water column to their benefit, while minimizing the impact of it’s negative effects. At the very least, they are capable of bearing with the negative effects of increased nitrogen sequestration very well!\nWhile this is not at all what I was expecting to learn when I first began this analysis, I am happy to have learned about a new biological process in coral larvae, and I’m very excited to see what other studies will come out on this topic!"
   }
 ]
