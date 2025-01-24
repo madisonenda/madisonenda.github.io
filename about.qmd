@@ -2,18 +2,3 @@
 title: "About"
 ---
 
-## What I do for work
-
-<p class= "title">ocean-y stuff<p>
-
-## What I do for fun
-
-<p class= "sage-text">just kidding I don't have fun<p>
-
-here is [some more] text{.sage-text}
-
-::: {.center-text}
-here is a line
-
-here is another line
-:::
