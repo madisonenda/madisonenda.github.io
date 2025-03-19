@@ -1,0 +1,88 @@
+---
+title: "Diving in to California's Deep Sea Corals!"
+description: "Building an infographic to investigation the diverse and beautiful deep sea biota in California"
+author: 
+  - name: Madison Enda 
+    url: https://madisonenda.github.io/ 
+    affiliation: MEDS 
+    affiliation-url: https://bren.ucsb.edu/masters-programs/master-environmental-data-science/academics-meds-program> 
+date: 2024-12-04 
+categories: \[MEDS]
+toc: true
+bibliography: references.bib
+cls: plos-computational-biology.csl
+image: "thomas_fire.png"
+format:
+  html:
+    other-links:
+      - text: Deep Sea Coral Repository
+        href: https://github.com/madisonenda/2017_Thomas_Fire_Analysis 
+#draft: false
+#draft-mode: visible 
+---
+
+## Link to Repository
+
+The R code used to create these visuals can be found at the bottom of this post, in case you would like to run it for yourself! Or if you'd like, you can use this link to access the GitHub repository for this project: [California Deep Sea Coral Notebook Repository](https://github.com/madisonenda/California-Deep-Sea-Coral)
+
+## Why Deep Sea Corals?
+
+I have always been fascinated by what amazing organisms corals are! Sea creatures with plants living in their skin, capable of building themselves up to cover miles of seafloor. A single organism can create the foundation of an entire ecosystem, a safe haven for all manner of marine life. I've traveled to see tropical coral reefs all over the world, and have always been amazed by their bright colors and abundance of movement and life!
+
+I always dreamt that someday I would be able to live close to reef systems like these, but as a Californian, I never even considered that I might have some in my own backyard!
+
+While combing through data sets for a project evaluating habitat distribution within California's Marine Protected Areas, I found a data set from the National Ocean & Atmospheric Administration (NOAA)'s [West Coast Deep Sea Coral Initiative](https://deepseacoraldata.noaa.gov/regions/West_Coast), combined with legacy deep sea coral counts from the [Deep-Sea Coral Research & Technology Program Database](https://deepseacoraldata.noaa.gov/data).
+
+It is important to note that many organisms beyond scleractinian corals (corals with hard skeletons) are included in this data set, such as hydrozoans, soft corals, sponges, anemones, etc. And while deep sea corals and their counterparts may not rely on symbiotic relationships with plants to survive, they are just as intricate and colorful as their tropical counterparts, and contribute vital ecosystem services as well.
+
+Nutrient cycling, pollution mitigation, habitat mediation, secondary production to increase fisheries biomass, and carbon sequestration are among the many benefits that deep water reefs provide[^1]. With recent debate around the use of deep sea environments for mining and other anthropogenic activity, I was interested to see how we Californians have already been affecting our deep sea reefs, and if I could somehow communicate these interactions effectively through an infographic.
+
+[^1]: La Bianca, et al. (2023). "A standardised ecosystem services framework for the deep sea", Frontiers in Marine Science. https://www.frontiersin.org/journals/marine-science/articles/10.3389/fmars.2023.1176230. DOI: 10.3389/fmars.2023.1176230
+
+## Scope of the Data:
+
+However, as I looked into the data, I realized that sampling efforts of deep sea benthic biota has been few and far between. While recent efforts from the West Coast Deep Sea Coral Initiative gave us samples from 2018 to 2021, the previous sampling period of a comparable magnitude occurred from 1888-1900.
+
+This would introduce a lot of bias into any statistical approach looking to identify the effects of anthropogenic activity on deep sea ecosystems due to infrequent sampling. Similarly, as it took quite a while to find a data source with sufficient temperature and water chemistry sampling at depth, I was unable to implement such data in my final visualizations.
+
+Thus, my variables were limited to:
+
+-   Year of observation (since not all observations had an exact date)
+
+-   Total count of organisms per observation (minimum of 1)
+
+-   Taxonomic information of organism (Phylum, Class, Genus, Species)
+
+-   Common name of organism
+
+-   Depth (in meters) of observation
+
+-   Total number of observations
+
+With this information, I was able to run summary statistics and get interesting facts regarding deep sea biota distribution and composition, but no inferences could be drawn beyond that. I began asking my peers what they would be interested in learning about deep sea coral reefs?
+
+## "Deep Sea, but Friendly!" :
+
+I was really surprised to find that many of my peers were deeply afraid (pardon the pun) of the deep sea! Whether it was thalasophobia, trypophobia, or just a general distaste for odd looking creatures, people were not particularly interested in my topic. I was shocked to hear someone say "I don't really care about that at all...it's super far away and deep sea corals are just not very interesting" when I told them my ideas! But it was through this engagement with my peers that I realized the need to pivot my audience.
+
+I decided I would make an infographic that went against the typical "scary deep sea" vibes, and instead create something soft, colorful, and inviting. I gathered inspiration from children's infographics I had seen while I worked at the Aquarium of the Pacific, and the Studio Ghibli movie 'Ponyo' that used soft colors and drawings to make the deep sea mesmerizing and gentle.
+
+My art skills might be wanting, but I decided I would give it a shot, and make something and younger me, and the general public, would be interested in. A pretty image that tricked people into learning about the deep water corals lol.
+
+## Assembling the graphs:
+
+I used R to clean and wrangle my data: selecting observations within California alone and my columns of interest. I then began running summary statistics on grouped data sets to get answers to a few questions I thought the general public may be interested in that I could answer with my data:
+
+1. How deep is the "deep sea"?
+
+2. What are "deep sea corals"?
+
+3. How often do we check the deep sea?
+
+4. How much is actually coral?
+
+For my first graph, I wanted to check the average depth that each taxonomic class of organism could be found, to show people where certain types of creatures like to live, and how far down the furthest ones are.
+
+I decided to use an inverted lollipop graph, to show depth increasing from left to right.
+
+
