@@ -40,7 +40,7 @@ It is important to note that many organisms beyond scleractinian corals (corals 
 
 Nutrient cycling, pollution mitigation, habitat mediation, secondary production to increase fisheries biomass, and carbon sequestration are among the many benefits that deep water reefs provide[^1]. With recent debate around the use of deep sea environments for mining and other anthropogenic activity, I was interested to see how we Californians have already been affecting our deep sea reefs, and if I could somehow communicate these interactions effectively through an infographic.
 
-[^1]: La Bianca, et al. (2023). "A standardised ecosystem services framework for the deep sea", Frontiers in Marine Science. https://www.frontiersin.org/journals/marine-science/articles/10.3389/fmars.2023.1176230. DOI: 10.3389/fmars.2023.1176230
+[^1]: La Bianca, et al. (2023). "A standardised ecosystem services framework for the deep sea", Frontiers in Marine Science. [Link to scientific article](https://www.frontiersin.org/journals/marine-science/articles/10.3389/fmars.2023.1176230) . DOI: 10.3389/fmars.2023.1176230
 
 ```{r, out.width="800px", fig.align='center'}
 #| echo: false 
