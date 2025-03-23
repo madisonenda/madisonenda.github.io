@@ -100,7 +100,7 @@ For my first graph, I wanted to check the average depth that each taxonomic clas
 
 I thought this should be addressed since all of these organisms can be found above 2000 meters depth! With the average depth of the Pacific ocean being 4000 meters, and the max depth at 11,000, I wanted to convey that these reefs aren't all that far away from human activity.
 
-I decided to use an inverted lollipop graph, to show depth increasing from left to right.
+I decided to use scatterlplot to show depth increasing from left to right.
 
 ```{r, out.width="800px", fig.align='center'}
 #| echo: false 
@@ -144,7 +144,7 @@ For my drawings and combining all the pieces, I decided to use Procreate to trac
 
 I chose to display my graphs and coral images in this manner (and not simply on a dark blue or black background) in hopes of emphasizing how closely humans and reefs are to one another, and how we affect one another in turn. I ended up using a slightly bolder font with serifs that I still thought conveyed a causal and gentle look (like a children's textbook).
 
-I ended up removing most axis and anything that made the graphs look too boxy in order to maintain a more fluid image. I also felt that most of the axis were superfluous with the drawings and labels (I had lots of categorical data), which lends itself to being more colorblind friendly as well.
+I ended up removing most axes and anything that made the graphs look too boxy in order to maintain a more fluid image. I also felt that most of the axis were superfluous with the drawings and labels (I had lots of categorical data), which lends itself to being more colorblind friendly as well.
 
 And without further ado...here she is!
 
@@ -233,7 +233,7 @@ mean_count_class <- mean_depth_clean %>%
 
 # Assemble graphs -----------------------------------------------------------------------------
 
-# Lollipop chart ---------------------------------
+# Scatterplot ---------------------------------
 # Line graph with icons for class by depth
 depth_graph <- ggplot(mean_depth_class, aes(x= reorder(Class, Mean_Depth), y= Mean_Depth)) +
     geom_point(aes(colour = -Mean_Depth,

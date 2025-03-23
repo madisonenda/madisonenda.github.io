@@ -284,7 +284,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 <p>For my first graph, I wanted to check the average depth that each taxonomic class of organism could be found. I wanted to show people where certain types of creatures like to live and how far down the furthest ones are, as this answers the question “How deep is the”deep sea”?“.</p>
 <p>I thought this should be addressed since all of these organisms can be found above 2000 meters depth! With the average depth of the Pacific ocean being 4000 meters, and the max depth at 11,000, I wanted to convey that these reefs aren’t all that far away from human activity.</p>
-<p>I decided to use an inverted lollipop graph, to show depth increasing from left to right.</p>
+<p>I decided to use scatterlplot to show depth increasing from left to right.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -334,7 +334,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="final-infographic">Final Infographic:</h2>
 <p>For my drawings and combining all the pieces, I decided to use Procreate to trace over the graphs, “paint” in a background, and assemble everything into a coastal ocean scene.</p>
 <p>I chose to display my graphs and coral images in this manner (and not simply on a dark blue or black background) in hopes of emphasizing how closely humans and reefs are to one another, and how we affect one another in turn. I ended up using a slightly bolder font with serifs that I still thought conveyed a causal and gentle look (like a children’s textbook).</p>
-<p>I ended up removing most axis and anything that made the graphs look too boxy in order to maintain a more fluid image. I also felt that most of the axis were superfluous with the drawings and labels (I had lots of categorical data), which lends itself to being more colorblind friendly as well.</p>
+<p>I ended up removing most axes and anything that made the graphs look too boxy in order to maintain a more fluid image. I also felt that most of the axis were superfluous with the drawings and labels (I had lots of categorical data), which lends itself to being more colorblind friendly as well.</p>
 <p>And without further ado…here she is!</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -420,7 +420,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a><span class="co"># Assemble graphs -----------------------------------------------------------------------------</span></span>
 <span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a><span class="co"># Lollipop chart ---------------------------------</span></span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a><span class="co"># Scatterplot ---------------------------------</span></span>
 <span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a><span class="co"># Line graph with icons for class by depth</span></span>
 <span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>depth_graph <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(mean_depth_class, <span class="fu">aes</span>(<span class="at">x=</span> <span class="fu">reorder</span>(Class, Mean_Depth), <span class="at">y=</span> Mean_Depth)) <span class="sc">+</span></span>
 <span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">colour =</span> <span class="sc">-</span>Mean_Depth,</span>
