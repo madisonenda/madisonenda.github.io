@@ -42,11 +42,11 @@ In the paper "Integrating impact evaluation in the design and implementation of 
 
 "To inform decisions about MPA placement, design and implementation, we need to expand our understanding of conditions under which MPAs are likely to lead to positive outcomes by embracing advances in impact evaluation methodologies" (Ahmadiyya et al. 2015)
 
-They then proposed using a coarse and statistical matching with a Difference-in-Difference (DiD) method for analyzing key fisheries species biomass, as well as functional species biomass (herbivorous fish that maintain the reef) between sites. After this, their main objective was to utilize a hierarchical mixed effects model would be used to determine how each variable contributes to key species biomass, and how they interact with one another. 
+They then proposed using a coarse and statistical matching with a *Difference-in-Difference (DiD)* method for analyzing key fisheries species biomass, as well as functional species biomass (herbivorous fish that maintain the reef) between sites. After this, their main objective was to utilize a *hierarchical mixed effects model* would be used to determine how each variable contributes to key species biomass, and how they interact with one another. 
 
 [^1]: Ahmadia, G. N., Glew, L., Provost, M., Gill, D., Hidayat, N. I., Mangubhai, S., Purwanto, & Fox, H. E. (2015). Integrating impact evaluation in the design and implementation of monitoring marine protected areas. Philosophical transactions of the Royal Society of London. Series B, Biological sciences, 370(1681), 20140275. https://doi.org/10.1098/rstb.2014.0275. [Link to article](https://royalsocietypublishing.org/doi/10.1098/rstb.2014.0275)
 
-To demonstrate the application of this framework, they decided to select a pre-existing MPA site with a plethora of monitoring data, Bird's Head Seascape in Indonesia, and "reverse engineer" counterfactual sites in order to run DiD and hierarchical mixed effects models. 
+To demonstrate the application of this framework, they decided to select a pre-existing MPA site with a plethora of monitoring data, Bird's Head Seascape in Indonesia, and "reverse engineer" counterfactual sites in order to run *DiD* and *hierarchical mixed effects models*. 
 
 This was accomplished via the selection of 10 primary covariates, selected by local researchers and reef specialists, comprehensive literature reviews, and determining what aligned with available data. The researchers affirmed that their covariates "
 The final covariates were determined to encompass “structural, biophysical, and social features of coral-reef sites that influence ecosystem structure”. 
@@ -54,7 +54,7 @@ The final covariates were determined to encompass “structural, biophysical, an
 
 ## Difference-in-Difference (DiD)
 
-A type of "Before-After Control-Impact" (BACI) analysis with an ecological focus, a Difference-in-Difference study leverages time trends when random assignment is not possible. Essentially, you can compare the same site before and after the implementation of the treatment to determine if it had any effect. DiD studies often use a linear regression to accomplish this.
+A type of *"Before-After Control-Impact" (BACI)* analysis with an ecological focus, a *Difference-in-Difference* study leverages time trends when random assignment is not possible. Essentially, you can compare the same site before and after the implementation of the treatment to determine if it had any effect. *DiD* studies often use a linear regression to accomplish this.
 
 A couple of the key assumptions made in using this model are :
 
@@ -63,8 +63,10 @@ A couple of the key assumptions made in using this model are :
 2. Parallel trends exist pre-treatment
 
 
+This process involves both coarse and statistical matching. *Coarse matching* involves grouping the sites by common physical, chemical, and ecological attributes by researchers, informed by experts in coral reef ecology (reefs with similar coral diversity, similar wave action, reef type, etc.). *Statistical matching* involves utilizing a 
 
 ## Hierarchical Mixed Effect Model
+
 
 
 ```{r, out.width="800px", fig.align='center'}
