@@ -38,15 +38,29 @@ knitr::include_graphics("map.png")
 ```
 ## How can we measure their effectiveness?
 
-In the paper "Integrating impact evaluation in the design and implementation of monitoring marine protected areas" by Ahmadiyya et al. 2015, the researchers proposed that control sites should be randomly selected and monitored at the time of MPA establishment, to act as counterfactuals for future analysis of MPA effectiveness. They then proposed using a Difference-in-Difference (DiD) method for analyzing key fisheries species biomass, as well as functional species biomass (herbivorous fish that maintain the reef) between sites.
+In the paper "Integrating impact evaluation in the design and implementation of monitoring marine protected areas" by Ahmadiyya et al. 2015 [^1], the researchers suggested that proposed sites should be randomly selected and monitored before the time of MPA establishment, to act as counterfactuals for future analysis of MPA effectiveness. If this were not possible with time constraints, then control sites should be randomly selected and paired to MPA sites before establishment and continually be monitored. They stated that a wide array of environmental and anthropogenic factors should be monitored in both the control and MPA sites to better evaluate each system, their sentiments best stated in the quote: 
 
-To demonstrate the application of this framework, they decided to select a pre-existing MPA site with a plethora of monitoring data, Bird's Head Seascape in Indonesia, and "reverse engineer" counterfactual sites in order to run a DiD and Hierarchical Mixed Effect Models. 
+"To inform decisions about MPA placement, design and implementation, we need to expand our understanding of conditions under which MPAs are likely to lead to positive outcomes by embracing advances in impact evaluation methodologies" (Ahmadiyya et al. 2015)
+
+They then proposed using a coarse and statistical matching with a Difference-in-Difference (DiD) method for analyzing key fisheries species biomass, as well as functional species biomass (herbivorous fish that maintain the reef) between sites. After this, their main objective was to utilize a hierarchical mixed effects model would be used to determine how each variable contributes to key species biomass, and how they interact with one another. 
+
+[^1]: Ahmadia, G. N., Glew, L., Provost, M., Gill, D., Hidayat, N. I., Mangubhai, S., Purwanto, & Fox, H. E. (2015). Integrating impact evaluation in the design and implementation of monitoring marine protected areas. Philosophical transactions of the Royal Society of London. Series B, Biological sciences, 370(1681), 20140275. https://doi.org/10.1098/rstb.2014.0275. [Link to article](https://royalsocietypublishing.org/doi/10.1098/rstb.2014.0275)
+
+To demonstrate the application of this framework, they decided to select a pre-existing MPA site with a plethora of monitoring data, Bird's Head Seascape in Indonesia, and "reverse engineer" counterfactual sites in order to run DiD and hierarchical mixed effects models. 
 
 This was accomplished via the selection of 10 primary covariates, selected by local researchers and reef specialists, comprehensive literature reviews, and determining what aligned with available data. The researchers affirmed that their covariates "
 The final covariates were determined to encompass “structural, biophysical, and social features of coral-reef sites that influence ecosystem structure”. 
 
 
 ## Difference-in-Difference (DiD)
+
+A type of "Before-After Control-Impact" (BACI) analysis with an ecological focus, a Difference-in-Difference study leverages time trends when random assignment is not possible. Essentially, you can compare the same site before and after the implementation of the treatment to determine if it had any effect. DiD studies often use a linear regression to accomplish this.
+
+A couple of the key assumptions made in using this model are :
+
+1. The baseline outcome would have persisted unchanged over time
+
+2. Parallel trends exist pre-treatment
 
 
 
