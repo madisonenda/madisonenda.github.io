@@ -63,10 +63,7 @@ A couple of the key assumptions made in using this model are :
 2. Parallel trends exist pre-treatment
 
 
-This process involves both coarse and statistical matching. *Coarse matching* involves grouping the sites by common physical, chemical, and ecological attributes by researchers, informed by experts in coral reef ecology (reefs with similar coral diversity, similar wave action, reef type, etc.). *Statistical matching* involves utilizing a 
-
-## Hierarchical Mixed Effect Model
-
+This process involves both coarse and statistical matching. *Coarse matching* involves grouping the sites by common physical, chemical, and ecological attributes by researchers, informed by experts in coral reef ecology (reefs with similar coral diversity, similar wave action, reef type, etc.). 
 
 
 ```{r, out.width="800px", fig.align='center'}
@@ -74,14 +71,45 @@ This process involves both coarse and statistical matching. *Coarse matching* in
 knitr::include_graphics("reef.png")
 ```
 
-## Primary Covariates
+## Hierarchical Mixed Effect Model
 
+*Statistical matching* involved utilizing a *hierarchical mixed effects model* to cluster control sites and MPA sites. The researchers used *nearest-neighbor covariate matching* to create grouped sites with similar traits. 
+
+The *Mahalanobis distance metric* was used to find the smallest mean differences between distributions of covariates across treated and control sites. All 10 covariates were weighted equally, and after multiple iterations considering the trade-offs between dropped MPA sites and achieving covariate balance, the optimal matching model dropped 13 of the 108 MPA sites and 22 of the 53 control sites.
 
 
 ```{r, out.width="800px", fig.align='center'}
 #| echo: false 
 knitr::include_graphics("reef_fish.png")
 ```
+
+## Primary Covariates
+
+The 10 primary covariates for this study were:
+
+- Reef Type ('patch', 'fringe', 'barrier', 'atoll')
+
+- Reef Slope (site identified as 'flat', 'slope', or 'wall')
+
+- Reef Exposure (exposed to air & increased wave energy: identified as 'exposed', 'semi-exposed','sheltered')
+
+- Pollution risk (Erosion rates, sediment delivery, sediment trapping, and sediment dispersal modeled and rated as 'low', 'medium', or 'high' threat level.)
+
+- Monsoon direction Sites (Reefs faced north or westerly exposed to northwest monsoon winds, while reefs facing south and easterly are exposed to southeast monsoon winds. Exposure to currents, wind, and precipitation is assumed to be similar in each group.
+
+- Sea-surface temperature anomalies (SSTA: "Number of times over the previous 52 weeks that SST was greater than or equal to 1 degree Celsius above that week’s long term average value")
+
+- **Distance to market**
+- **Distance to fishing settlement**
+- **Distance to deep water**
+- **Distance to mangrove habitat**
+
+
+Standardized mean differences of less than 5% for a covariate are typically necessary for robust causal inference. While 6 of these covariates met the threshold, 4 did not (in bold). This suggests that, on average, MPA sites are further from markets, fishing settlements, mangroves, and deep water as compared to control sites, indicating that MPA sites are more "cherry-picked" than the controls.
+
+In order to address this, these 4 covariates need to be accounted for in the post-hoc analysis to avoid omitted variable bias. 
+
+
 
 ## Findings
 
