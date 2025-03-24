@@ -116,7 +116,7 @@
     "href": "posts.html",
     "title": "Blog",
     "section": "",
-    "text": "Diving in to California’s Deep Sea Corals!\n\n\n\n[MEDS]\n\n\n\nBuilding an infographic to investigation the diverse and beautiful deep sea biota in California\n\n\n\nMadison Enda\n\n\nMar 18, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNutrient Pollution on Coral Demography\n\n\n\n[MEDS]\n\n\n\nAre larval populations at increased risk?\n\n\n\nMadison Enda\n\n\nDec 13, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEvaluating the 2017 Thomas Fire\n\n\n\n[MEDS]\n\n\n\nA brief investigation into the extent of damages and environmental degradation\n\n\n\nMadison Enda\n\n\nDec 4, 2024\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Causal Inference Study: A Framework for Monitoring Marine Protected Areas\n\n\n\n[MEDS]\n\n\n\nA deep dive into Ahmadiyya et al. 2015: A case study on Bird’s Head Seascape, Indonesia\n\n\n\nMadison Enda\n\n\nMar 21, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDiving in to California’s Deep Sea Corals!\n\n\n\n[MEDS]\n\n\n\nBuilding an infographic to investigation the diverse and beautiful deep sea biota in California\n\n\n\nMadison Enda\n\n\nMar 18, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNutrient Pollution on Coral Demography\n\n\n\n[MEDS]\n\n\n\nAre larval populations at increased risk?\n\n\n\nMadison Enda\n\n\nDec 13, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEvaluating the 2017 Thomas Fire\n\n\n\n[MEDS]\n\n\n\nA brief investigation into the extent of damages and environmental degradation\n\n\n\nMadison Enda\n\n\nDec 4, 2024\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/2024-10-18-my-first-post/index.html#a-little-bit-of-background",
@@ -264,5 +264,54 @@
     "title": "Diving in to California’s Deep Sea Corals!",
     "section": "Footnotes",
     "text": "Footnotes\n\n\nLa Bianca, et al. (2023). “A standardised ecosystem services framework for the deep sea”, Frontiers in Marine Science. Link to scientific article . DOI: 10.3389/fmars.2023.1176230↩︎"
+  },
+  {
+    "objectID": "posts/EDS241-BirdsHeadSeascape/index.html#what-is-the-purpose-of-a-marine-protected-area",
+    "href": "posts/EDS241-BirdsHeadSeascape/index.html#what-is-the-purpose-of-a-marine-protected-area",
+    "title": "Causal Inference Study: A Framework for Monitoring Marine Protected Areas",
+    "section": "What is the purpose of a Marine Protected Area?",
+    "text": "What is the purpose of a Marine Protected Area?\nMarine Protected Areas (or MPAs) endeavor to protect marine life and crucial marine habitats for both their intrinsic and cultural values. While MPAs are discrete geographic regions characterized by regulations limiting or entirely preventing human interaction, they support a wide array of organisms that may be transient between multiple areas (protected or non).\nDesires to protect or preserve local fisheries often play a major role in motivating MPA development. As a result, fishery species biomass is of special interest to policy makers, who allocate funds and advise the management of these areas.\nAs of 2025, MPA networks are utilized worldwide, but there is no unified methodology for determining how MPAs affect key species biomass. This is due in part to the difficulty in establishing a counterfactual that MPA sites can be compared to, in order to ascertain the trajectory of key species biomass in the absence of MPA establishment in these areas.\nMPA boundaries are often selected to encompass specific biota and biodiversity, and thus are not randomly selected. Since marine monitoring and research is time consuming and costly, it is highly unlikley that there will be legacy monitoring of a region before it becomes an MPA.\nHowever, there have been some promising frameworks proposed that utilized sites with legacy monitoring to test the validity of their proposed designs."
+  },
+  {
+    "objectID": "posts/EDS241-BirdsHeadSeascape/index.html#how-can-we-measure-their-effectiveness",
+    "href": "posts/EDS241-BirdsHeadSeascape/index.html#how-can-we-measure-their-effectiveness",
+    "title": "Causal Inference Study: A Framework for Monitoring Marine Protected Areas",
+    "section": "How can we measure their effectiveness?",
+    "text": "How can we measure their effectiveness?\nIn the paper “Integrating impact evaluation in the design and implementation of monitoring marine protected areas” by Ahmadiyya et al. 2015, the researchers proposed that control sites should be randomly selected and monitored at the time of MPA establishment, to act as counterfactuals for future analysis of MPA effectiveness. They then proposed using a Difference-in-Difference (DiD) method for analyzing key fisheries species biomass, as well as functional species biomass (herbivorous fish that maintain the reef) between sites.\nTo demonstrate the application of this framework, they decided to select a pre-existing MPA site with a plethora of monitoring data, Bird’s Head Seascape in Indonesia, and “reverse engineer” counterfactual sites in order to run a DiD and Hierarchical Mixed Effect Models.\nThis was accomplished via the selection of 10 primary covariates, selected by local researchers and reef specialists, comprehensive literature reviews, and determining what aligned with available data. The researchers affirmed that their covariates ” The final covariates were determined to encompass “structural, biophysical, and social features of coral-reef sites that influence ecosystem structure”."
+  },
+  {
+    "objectID": "posts/EDS241-BirdsHeadSeascape/index.html#difference-in-difference-did",
+    "href": "posts/EDS241-BirdsHeadSeascape/index.html#difference-in-difference-did",
+    "title": "Causal Inference Study: A Framework for Monitoring Marine Protected Areas",
+    "section": "Difference-in-Difference (DiD)",
+    "text": "Difference-in-Difference (DiD)"
+  },
+  {
+    "objectID": "posts/EDS241-BirdsHeadSeascape/index.html#hierarchical-mixed-effect-model",
+    "href": "posts/EDS241-BirdsHeadSeascape/index.html#hierarchical-mixed-effect-model",
+    "title": "Causal Inference Study: A Framework for Monitoring Marine Protected Areas",
+    "section": "Hierarchical Mixed Effect Model",
+    "text": "Hierarchical Mixed Effect Model"
+  },
+  {
+    "objectID": "posts/EDS241-BirdsHeadSeascape/index.html#primary-covariates",
+    "href": "posts/EDS241-BirdsHeadSeascape/index.html#primary-covariates",
+    "title": "Causal Inference Study: A Framework for Monitoring Marine Protected Areas",
+    "section": "Primary Covariates",
+    "text": "Primary Covariates"
+  },
+  {
+    "objectID": "posts/EDS241-BirdsHeadSeascape/index.html#findings",
+    "href": "posts/EDS241-BirdsHeadSeascape/index.html#findings",
+    "title": "Causal Inference Study: A Framework for Monitoring Marine Protected Areas",
+    "section": "Findings",
+    "text": "Findings"
+  },
+  {
+    "objectID": "posts/EDS241-BirdsHeadSeascape/index.html#robustness-application",
+    "href": "posts/EDS241-BirdsHeadSeascape/index.html#robustness-application",
+    "title": "Causal Inference Study: A Framework for Monitoring Marine Protected Areas",
+    "section": "Robustness & Application",
+    "text": "Robustness & Application"
   }
 ]

@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Madison Enda">
+<meta name="dcterms.date" content="2025-03-21">
+<meta name="description" content="A deep dive into Ahmadiyya et al.&nbsp;2015: A case study on Bird’s Head Seascape, Indonesia">
 
-<title>Blog – Madison Enda</title>
+<title>Causal Inference Study: A Framework for Monitoring Marine Protected Areas – Madison Enda</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,24 +26,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,72 +69,14 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
             <div id="quarto-search" class="" title="Search"></div>
@@ -143,19 +86,19 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./resources.html"> 
+    <a class="nav-link" href="../../resources.html"> 
 <span class="menu-text">Resources</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./posts.html" aria-current="page"> 
+    <a class="nav-link" href="../../posts.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
 </ul>
@@ -166,164 +109,154 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-page-left">
+      <h1 class="title">Causal Inference Study: A Framework for Monitoring Marine Protected Areas</h1>
+                  <div>
+        <div class="description">
+          A deep dive into Ahmadiyya et al.&nbsp;2015: A case study on Bird’s Head Seascape, Indonesia
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">[MEDS]</div>
+              </div>
+                  </div>
+  </div>
+    
+  <div class="quarto-title-meta-author column-page-left">
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-heading">Affiliation</div>
+    
+      <div class="quarto-title-meta-contents">
+      <p class="author"><a href="https://madisonenda.github.io/">Madison Enda</a> </p>
+    </div>
+    <div class="quarto-title-meta-contents">
+          <p class="affiliation">
+              <a href="https://bren.ucsb.edu/masters-programs/master-environmental-data-science/academics-meds-program>">
+              MEDS
+              </a>
+            </p>
+        </div>
+    </div>
+
+  <div class="quarto-title-meta column-page-left">
+
+        
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">March 21, 2025</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(4)</span></div><div class="category" data-category="\[MEDS\]">\[MEDS\] <span class="quarto-category-count">(1)</span></div><div class="category" data-category="\[MEDS]">\[MEDS] <span class="quarto-category-count">(3)</span></div></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#what-is-the-purpose-of-a-marine-protected-area" id="toc-what-is-the-purpose-of-a-marine-protected-area" class="nav-link active" data-scroll-target="#what-is-the-purpose-of-a-marine-protected-area">What is the purpose of a Marine Protected Area?</a></li>
+  <li><a href="#how-can-we-measure-their-effectiveness" id="toc-how-can-we-measure-their-effectiveness" class="nav-link" data-scroll-target="#how-can-we-measure-their-effectiveness">How can we measure their effectiveness?</a></li>
+  <li><a href="#difference-in-difference-did" id="toc-difference-in-difference-did" class="nav-link" data-scroll-target="#difference-in-difference-did">Difference-in-Difference (DiD)</a></li>
+  <li><a href="#hierarchical-mixed-effect-model" id="toc-hierarchical-mixed-effect-model" class="nav-link" data-scroll-target="#hierarchical-mixed-effect-model">Hierarchical Mixed Effect Model</a></li>
+  <li><a href="#primary-covariates" id="toc-primary-covariates" class="nav-link" data-scroll-target="#primary-covariates">Primary Covariates</a></li>
+  <li><a href="#findings" id="toc-findings" class="nav-link" data-scroll-target="#findings">Findings</a></li>
+  <li><a href="#robustness-application" id="toc-robustness-application" class="nav-link" data-scroll-target="#robustness-application">Robustness &amp; Application</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Blog</h1>
-</div>
-
-
-
-<div class="quarto-title-meta column-page-left">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
+<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
 
 
 
 
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="seascape.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="800"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="what-is-the-purpose-of-a-marine-protected-area" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-the-purpose-of-a-marine-protected-area">What is the purpose of a Marine Protected Area?</h2>
+<p>Marine Protected Areas (or MPAs) endeavor to protect marine life and crucial marine habitats for both their intrinsic and cultural values. While MPAs are discrete geographic regions characterized by regulations limiting or entirely preventing human interaction, they support a wide array of organisms that may be transient between multiple areas (protected or non).</p>
+<p>Desires to protect or preserve local fisheries often play a major role in motivating MPA development. As a result, fishery species biomass is of special interest to policy makers, who allocate funds and advise the management of these areas.</p>
+<p>As of 2025, MPA networks are utilized worldwide, but there is no unified methodology for determining how MPAs affect key species biomass. This is due in part to the difficulty in establishing a counterfactual that MPA sites can be compared to, in order to ascertain the trajectory of key species biomass in the absence of MPA establishment in these areas.</p>
+<p>MPA boundaries are often selected to encompass specific biota and biodiversity, and thus are not randomly selected. Since marine monitoring and research is time consuming and costly, it is highly unlikley that there will be legacy monitoring of a region before it becomes an MPA.</p>
+<p>However, there have been some promising frameworks proposed that utilized sites with legacy monitoring to test the validity of their proposed designs.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="map.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="800"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="how-can-we-measure-their-effectiveness" class="level2">
+<h2 class="anchored" data-anchor-id="how-can-we-measure-their-effectiveness">How can we measure their effectiveness?</h2>
+<p>In the paper “Integrating impact evaluation in the design and implementation of monitoring marine protected areas” by Ahmadiyya et al.&nbsp;2015, the researchers proposed that control sites should be randomly selected and monitored at the time of MPA establishment, to act as counterfactuals for future analysis of MPA effectiveness. They then proposed using a Difference-in-Difference (DiD) method for analyzing key fisheries species biomass, as well as functional species biomass (herbivorous fish that maintain the reef) between sites.</p>
+<p>To demonstrate the application of this framework, they decided to select a pre-existing MPA site with a plethora of monitoring data, Bird’s Head Seascape in Indonesia, and “reverse engineer” counterfactual sites in order to run a DiD and Hierarchical Mixed Effect Models.</p>
+<p>This was accomplished via the selection of 10 primary covariates, selected by local researchers and reef specialists, comprehensive literature reviews, and determining what aligned with available data. The researchers affirmed that their covariates ” The final covariates were determined to encompass “structural, biophysical, and social features of coral-reef sites that influence ecosystem structure”.</p>
+</section>
+<section id="difference-in-difference-did" class="level2">
+<h2 class="anchored" data-anchor-id="difference-in-difference-did">Difference-in-Difference (DiD)</h2>
+</section>
+<section id="hierarchical-mixed-effect-model" class="level2">
+<h2 class="anchored" data-anchor-id="hierarchical-mixed-effect-model">Hierarchical Mixed Effect Model</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="reef.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="800"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="primary-covariates" class="level2">
+<h2 class="anchored" data-anchor-id="primary-covariates">Primary Covariates</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="reef_fish.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="800"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="findings" class="level2">
+<h2 class="anchored" data-anchor-id="findings">Findings</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="islands.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="800"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="robustness-application" class="level2">
+<h2 class="anchored" data-anchor-id="robustness-application">Robustness &amp; Application</h2>
 
-<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="\[MEDS]" data-listing-date-sort="1742540400000" data-listing-file-modified-sort="1742782970807" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="430">
-<a href="./posts/EDS241-BirdsHeadSeascape/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./posts/EDS241-BirdsHeadSeascape/seascape.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Causal Inference Study: A Framework for Monitoring Marine Protected Areas
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('\[MEDS]'); return false;">
-[MEDS]
-</div>
-</div>
-<div class="card-text listing-description">
-A deep dive into Ahmadiyya et al.&nbsp;2015: A case study on Bird’s Head Seascape, Indonesia
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Madison Enda
-</div>
-<div class="listing-date">
-Mar 21, 2025
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="1" data-categories="\[MEDS]" data-listing-date-sort="1742281200000" data-listing-file-modified-sort="1742766058928" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="14" data-listing-word-count-sort="2688">
-<a href="./posts/EDS240-Deep-Sea-Coral-Blog-Post/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./posts/EDS240-Deep-Sea-Coral-Blog-Post/DeepSeaCoralsInfographic.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Diving in to California’s Deep Sea Corals!
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('\[MEDS]'); return false;">
-[MEDS]
-</div>
-</div>
-<div class="card-text listing-description">
-Building an infographic to investigation the diverse and beautiful deep sea biota in California
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Madison Enda
-</div>
-<div class="listing-date">
-Mar 18, 2025
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="\[MEDS\]" data-listing-date-sort="1734076800000" data-listing-file-modified-sort="1742264944442" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2150">
-<a href="./posts/EDS222-Blog-Post/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./posts/EDS222-Blog-Post/coral-spawning.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Nutrient Pollution on Coral Demography
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('\[MEDS\]'); return false;">
-[MEDS]
-</div>
-</div>
-<div class="card-text listing-description">
-Are larval populations at increased risk?
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Madison Enda
-</div>
-<div class="listing-date">
-Dec 13, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="3" data-categories="\[MEDS]" data-listing-date-sort="1733299200000" data-listing-file-modified-sort="1742368071666" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1692">
-<a href="./posts/EDS220-Blog Post/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./posts/EDS220-Blog Post/thomas_fire.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Evaluating the 2017 Thomas Fire
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('\[MEDS]'); return false;">
-[MEDS]
-</div>
-</div>
-<div class="card-text listing-description">
-A brief investigation into the extent of damages and environmental degradation
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Madison Enda
-</div>
-<div class="listing-date">
-Dec 4, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
