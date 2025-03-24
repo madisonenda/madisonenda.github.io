@@ -212,6 +212,7 @@ ul.task-list li input[type="checkbox"] {
 <p>They then proposed using a coarse and statistical matching with a <em>Difference-in-Difference (DiD)</em> method for analyzing key fisheries species biomass, as well as functional species biomass (herbivorous fish that maintain the reef) between sites. After this, their main objective was to utilize a <em>hierarchical mixed effects model</em> would be used to determine how each variable contributes to key species biomass, and how they interact with one another.</p>
 <p>To demonstrate the application of this framework, they decided to select a pre-existing MPA site with a plethora of monitoring data, Bird’s Head Seascape in Indonesia, and “reverse engineer” counterfactual sites in order to run <em>DiD</em> and <em>hierarchical mixed effects models</em>.</p>
 <p>This was accomplished via the selection of 10 primary covariates, selected by local researchers and reef specialists, comprehensive literature reviews, and determining what aligned with available data. The researchers affirmed that their covariates ” The final covariates were determined to encompass “structural, biophysical, and social features of coral-reef sites that influence ecosystem structure”.</p>
+<p>Due to limitations in the sampling, with only one year of pre-MPA establishment data to utilize for the <em>DiD</em> analysis, the researchers decided to do a <em>“post-hoc regression adjustment”</em> that will use more data and decrease unobserved bias in the coming years.</p>
 </section>
 <section id="difference-in-difference-did" class="level2">
 <h2 class="anchored" data-anchor-id="difference-in-difference-did">Difference-in-Difference (DiD)</h2>
@@ -235,7 +236,17 @@ ul.task-list li input[type="checkbox"] {
 <section id="hierarchical-mixed-effect-model" class="level2">
 <h2 class="anchored" data-anchor-id="hierarchical-mixed-effect-model">Hierarchical Mixed Effect Model</h2>
 <p><em>Statistical matching</em> involved utilizing a <em>hierarchical mixed effects model</em> to cluster control sites and MPA sites. The researchers used <em>nearest-neighbor covariate matching</em> to create grouped sites with similar traits.</p>
-<p>The <em>Mahalanobis distance metric</em> was used to find the smallest mean differences between distributions of covariates across treated and control sites. All 10 covariates were weighted equally, and after multiple iterations considering the trade-offs between dropped MPA sites and achieving covariate balance, the optimal matching model dropped 13 of the 108 MPA sites and 22 of the 53 control sites.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="sites.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="800"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The <em>Mahalanobis distance metric</em> was used to find the smallest mean differences between distributions of covariates across treated and control sites. All 10 covariates were weighted equally, and had calipers applied to them to ensure sites were grouped by similar traits (slope reefs only grouped with slope reefs, high risk only grouped with high rick, etc.).</p>
+<p>After multiple iterations considering the trade-offs between dropped MPA sites and achieving covariate balance, the optimal matching model dropped 13 of the 108 MPA sites and 22 of the 53 control sites.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -250,22 +261,28 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="primary-covariates">Primary Covariates</h2>
 <p>The 10 primary covariates for this study were:</p>
 <ul>
-<li><p>Reef Type (‘patch’, ‘fringe’, ‘barrier’, ‘atoll’)</p></li>
-<li><p>Reef Slope (site identified as ‘flat’, ‘slope’, or ‘wall’)</p></li>
-<li><p>Reef Exposure (exposed to air &amp; increased wave energy: identified as ‘exposed’, ‘semi-exposed’,‘sheltered’)</p></li>
-<li><p>Pollution risk (Erosion rates, sediment delivery, sediment trapping, and sediment dispersal modeled and rated as ‘low’, ‘medium’, or ‘high’ threat level.)</p></li>
-<li><p>Monsoon direction Sites (Reefs faced north or westerly exposed to northwest monsoon winds, while reefs facing south and easterly are exposed to southeast monsoon winds. Exposure to currents, wind, and precipitation is assumed to be similar in each group.</p></li>
-<li><p>Sea-surface temperature anomalies (SSTA: “Number of times over the previous 52 weeks that SST was greater than or equal to 1 degree Celsius above that week’s long term average value”)</p></li>
+<li><p><strong>Reef Type</strong> (‘patch’, ‘fringe’, ‘barrier’, ‘atoll’)</p></li>
+<li><p><strong>Reef Slope</strong> (site identified as ‘flat’, ‘slope’, or ‘wall’)</p></li>
+<li><p><strong>Reef Exposure</strong> (exposed to air &amp; increased wave energy: identified as ‘exposed’, ‘semi-exposed’,‘sheltered’)</p></li>
+<li><p><strong>Pollution risk</strong> (Erosion rates, sediment delivery, sediment trapping, and sediment dispersal modeled and rated as ‘low’, ‘medium’, or ‘high’ threat level.)</p></li>
+<li><p><strong>Monsoon direction</strong> (Reefs faced north or westerly exposed to northwest monsoon winds, while reefs facing south and easterly are exposed to southeast monsoon winds. Exposure to currents, wind, and precipitation is assumed to be similar in each group.</p></li>
+<li><p><strong>Sea-surface temperature anomalies</strong> (SSTA: “Number of times over the previous 52 weeks that SST was greater than or equal to 1 degree Celsius above that week’s long term average value”)</p></li>
 <li><p><strong>Distance to market</strong></p></li>
 <li><p><strong>Distance to fishing settlement</strong></p></li>
 <li><p><strong>Distance to deep water</strong></p></li>
 <li><p><strong>Distance to mangrove habitat</strong></p></li>
 </ul>
-<p>Standardized mean differences of less than 5% for a covariate are typically necessary for robust causal inference. While 6 of these covariates met the threshold, 4 did not (in bold). This suggests that, on average, MPA sites are further from markets, fishing settlements, mangroves, and deep water as compared to control sites, indicating that MPA sites are more “cherry-picked” than the controls.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="covariates.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="800"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Standardized mean differences of less than 5% for a covariate are typically necessary for robust causal inference. While 6 of these covariates met the threshold, the last 4 did not. This suggests that, on average, MPA sites are further from markets, fishing settlements, mangroves, and deep water as compared to control sites, indicating that MPA sites are more “cherry-picked” than the controls.</p>
 <p>In order to address this, these 4 covariates need to be accounted for in the post-hoc analysis to avoid omitted variable bias.</p>
-</section>
-<section id="findings" class="level2">
-<h2 class="anchored" data-anchor-id="findings">Findings</h2>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -276,8 +293,27 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </section>
+<section id="findings" class="level2">
+<h2 class="anchored" data-anchor-id="findings">Findings</h2>
+<p>Using only their initial <em>DiD</em> results (<em>post-hoc regression adjustment</em> has not occurred yet), their main findings showed that in the pooled data for all MPAs we see an increase in specifically fisheries biomass, while functional group (smaller herbivorous fish) biomass remains unchanged from predicted baseline.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="DiD.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="800"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>While there is not much to extrapolate from this analysis, we believe that the authors summed it up rather well when they said “We anticipate that the value of this baseline data, now combined with control site data, will only increase with time. And as more geographies use comparable monitoring methods and well-designed sampling”</p>
+</section>
 <section id="robustness-application" class="level2">
 <h2 class="anchored" data-anchor-id="robustness-application">Robustness &amp; Application</h2>
+<p>For their robustness check, the authors specifically wanted to analyze unobserved biases in the model via sensitivity analysis. They referenced an analysis format which uses M-estimators (such as least-squares, maximum likelihood estimation, and confidence intervals) to reduce omitted variable bias.</p>
+<p>However, it should be noted that this analysis has not been performed yet, as they are still waiting to complete further post-hoc analysis once they have more data.</p>
+<p>The researchers stated that, in reference to “observable biases that cannot be adequately controlled by our statistical matching model” (e.g.&nbsp;distance to fishing settlement, mangrove habitat and deep water, and year which did not have a standard difference of less than 5%), “we account for the magnitude and direction of this bias in our mixed model, in a procedure known as post-hoc regression adjustment”.</p>
+<p>Overall, due to the in depth selection and comparison of covariates to reduce observed bias, and the researchers not overextending the applicability of their data by sticking to a <em>nearest-neighbor matching</em> and <em>Difference-in-Difference</em> model, means their findings are robust, and present a convincing argument for the application of their MPA monitoring framework.</p>
+<p>I personally look forward to further publications from these authors, to see how well this framework holds up in the future with increased sampling of MPAs and control sites.</p>
 
 
 </section>
