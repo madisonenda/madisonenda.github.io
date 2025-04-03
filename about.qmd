@@ -1,5 +1,5 @@
 ---
-title: "About Me"
+title: "More About Me"
 ---
 
 ## **Education:**
@@ -26,7 +26,7 @@ title: "About Me"
 
 ### **Study Abroad: Coral Reefs of the Red Sea** (2022)
 
--   I was fortunate enough to be able to take part in a coral biology and conservation course in Eilat, Israel last summer! It was incredible to study the highly thermally tolerant reef, and to hear lectures from researchers traveling all over the world to develop plans for mitigating the major threats reefs face today.\
+-   I was fortunate enough to be able to take part in a coral biology and conservation course in Eilat, Israel! It was incredible to study the highly thermally tolerant reef, and to hear lectures from researchers traveling all over the world to develop plans for mitigating the major threats reefs face today.\
 -   During this course I was able to observe many studies taking place at the ‘Interuniversity Institute for Marine Sciences of Eilat’. Some were analyzing the effects of light pollution on certain coral species, collecting eDNA samples for international databases, studying increased metabolic efficiency regarding pulsation rates of certain corals, and many others. I was able to study 3D modeling and the photogrammetry methods currently being employed by researchers there to conduct reef surveys or create artificial reefs with increased functional space.\
 -   I hope to utilize the methods I learned to help me analyze and compile data for my future research projects. While studying here, I learned how to conduct transect line and grid surveys, use Agisoft Metashape Pro (and similar 3D imaging programs), collect coral tissue for analyzing, and how to set up basic coral life support systems
 
